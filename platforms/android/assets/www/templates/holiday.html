@@ -1,0 +1,30 @@
+<ion-view title="Holidays" id="page1" style="background-color:white;" ng-model="vis">
+  <ion-nav-buttons side="right" class="has-header">
+  
+  </ion-nav-buttons>
+  <ion-content padding="true" style="margin-bottom: 40px;" class="has-header">
+<ion-scroll zooming="true"
+	direction="xy" 
+	delegate-handle="zoom-pane" 
+	class="zoom-pane" 
+	min-zoom="1" 
+	scrollbar-x="false" 
+	scrollbar-y="false" 
+	overflow-scroll="false">
+
+      <img src="img/holiday list_2-page-001.jpg" class="img-responsive" alt="Cinque Terre">
+
+</ion-scroll>
+
+	
+</ion-content>
+<div class="bar bar-footer bar-balanced footerBar">
+        <div class = "button-bar bar-balanced">
+   <button class="button button-icon button-clear ion-home footerButton" ui-sref="side-menu21.jayaJayaShankara({})" menu-close="" style="color: rgb(116,116,116)!important;"></button>
+   <button class="button button-icon button-clear ion-android-notifications footerButton" ui-sref="side-menu21.notification" menu-close="" style="color: rgb(116,116,116)!important;"></button>
+  <button class="button button-icon button-clear ion-android-settings footerButton" ui-sref="side-menu21.settings" menu-close="" style="color: rgb(116,116,116)!important;"></button>
+   <button class="button button-icon button-clear ion-log-out footerButton" ng-click="logout();" style="color: rgb(116,116,116)!important;"></button>
+</div> 
+        
+    </div>
+</ion-view>

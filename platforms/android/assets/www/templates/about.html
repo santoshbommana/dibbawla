@@ -1,0 +1,30 @@
+
+  </ion-nav-buttons><ion-view title="About" id="page1" style="background-color:white;" ng-model="vis">
+  <ion-nav-buttons side="right" class="has-header">
+   
+  </ion-nav-buttons>
+  <ion-content padding="true" style="margin-bottom: 40px;" class="has-header">
+
+   <div align="center" ng-repeat="person in about" style="border: rgb(251, 216, 2) 1px solid;margin-bottom: 25px;padding-top: 10px;">
+   <div align="center"><img ng-src="{{person.image[0]}}" style="border: rgb(251, 216, 2) 3px solid;border-radius: 80px!important;width: 130px;height: 130px;"></div>
+   <p><h5><b>{{person.name}}</b></h5></p>
+   <p style="margin-top: -10px;"><b style="font-size: 11px;">{{person.designation}}</b></p>
+	  <div style="border: rgb(251, 216, 2) 1px solid"><p>{{person.description}}</p></div>
+   	
+   </div>
+    
+
+
+
+</ion-content>
+
+<div class="bar bar-footer bar-balanced footerBar">
+        <div class = "button-bar bar-balanced">
+   <button class="button button-icon button-clear ion-home footerButton" ui-sref="side-menu21.jayaJayaShankara({})" menu-close="" style="color: rgb(116,116,116)!important;"></button>
+   <button class="button button-icon button-clear ion-android-notifications footerButton" ui-sref="side-menu21.notification" menu-close="" style="color: rgb(116,116,116)!important;"></button>
+  <button class="button button-icon button-clear ion-android-settings footerButton" ui-sref="side-menu21.settings" menu-close="" style="color: rgb(116,116,116)!important;"></button>
+   <button class="button button-icon button-clear ion-log-out footerButton" ng-click="logout();" style="color: rgb(116,116,116)!important;"></button>
+</div> 
+        
+    </div>
+</ion-view>

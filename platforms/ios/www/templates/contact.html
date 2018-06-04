@@ -1,0 +1,39 @@
+<ion-view title="Contact" id="page6" style="background-color:#F2E9CB;">
+  <ion-content padding="true" class="has-header">
+    <div id="contact-container4">
+      <h3 id="contact-heading1" style="color:#872401;">REACH US</h3>
+      <form id="contact-form5" class="list">
+        <label class="item item-input" id="contact-input11">
+          <span class="input-label">Name</span>
+          <input type="text" placeholder="" ng-model="data.name">
+        </label>
+        <label class="item item-input" id="contact-input12">
+          <span class="input-label">Mobile</span>
+          <input type="number" placeholder="" ng-model="data.mobile">
+        </label>
+        <label class="item item-input" id="contact-input12">
+          <span class="input-label">Email</span>
+          <input type="email" placeholder="" ng-model="data.email">
+        </label>
+
+        <label class="item item-input" id="contact-input13">
+          <span class="input-label">Subject</span>
+          <input type="text" placeholder="" ng-model="data.subject">
+        </label>
+        <label class="item item-input" id="contact-input14">
+          <span class="input-label">Message</span>
+          <input type="text" placeholder="" ng-model="data.message">
+        </label>
+        <button id="contact-button4" class="button button-dark  button-block" ng-click="sendMail()">SEND</button>
+      </form>
+    </div>
+    <div id="contact-container5">
+      <h4 id="contact-heading2" style="color:#872401;">VISIT US</h4>
+      <creator-map-component options="{&quot;draggable&quot;:false}" marker="true" location="Dhruvatara Apartments, Somajiguda, Hyderabad, Telangana" zoom="12" style="display:block;position:relative;width:100%;height:300px;">
+        <ui-gmap-google-map ng-if="map.center" center="map.center" zoom="map.zoom" options="map.options">
+          <ui-gmap-marker coords="map.marker.coords" idkey="map.marker.id" options="map.marker.options"></ui-gmap-marker>
+        </ui-gmap-google-map>
+      </creator-map-component>
+    </div>
+  </ion-content>
+</ion-view>

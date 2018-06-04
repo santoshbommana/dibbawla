@@ -1,0 +1,23 @@
+<ion-view title="Admin Login Page" id="page11" style="background-color:#FFF4BC;">
+<!--
+  <ion-content padding="true" style="background: url(img/hL5Y2IBmRS6kaXHVkTOY_texture.png) no-repeat center;background-size:cover;" class="has-header">
+   <a  class = "button button-block button-calm" href="https://sarvam.mybluemix.net/#/login" target="iframe_b" style="color: white;">Login</a>
+    
+             <iframe style="height: 600px;width: 100%;margin-top:0px"  name="iframe_b"></iframe>  </ion-content>
+-->
+ <ion-content class="padding">
+      <p>
+        <label class="item item-input input" >
+         <i class="icon ion-person" style="margin-right: 10px;"> </i>
+          <input type="text" placeholder="Username" ng-model="username">
+        </label>
+        </p>
+         <p>
+            <label class="item item-input input">
+             <i class = "icon icon ion-ios-eye" style="margin-right: 10px;"> </i>
+              <input type="password"  placeholder="Password" ng-model="password">
+          </label>
+          </p> 
+      <button class="button button-block button-calm" ng-click="login()">Login</button>
+  </ion-content>
+</ion-view>

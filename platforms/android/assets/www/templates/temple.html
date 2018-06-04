@@ -1,0 +1,165 @@
+<ion-view title="Temple" id="page11" style="background-color:white;">
+ <ion-nav-buttons side="right" class="has-header">
+    
+  </ion-nav-buttons>
+  <ion-content padding="true" style="margin-bottom: 40px;" class="has-header">
+    
+    <!--
+<a  class = "button button-block button-calm" href="https://sarvam.mybluemix.net/#/temple" target="iframe_a" style="color: white;">Temple Page</a>
+    <div align="center" style="width: 100%;height: 120px;color: red;background-color: white;position: absolute;">
+<p><h1>Temple Page matter</h1></p>
+        </div> 
+    
+ <iframe style="height: 600px;width: 100%;margin-top:0px"  name="iframe_a"></iframe>-->
+    
+<form name="myForm" novalidate>
+   <span style="color:red;font-size:20px">{{errorTempleName}}</span>
+    <span style="color:red;font-size:30px">*</span>
+        <label class="item item-input input" >   
+
+          <input type="text" placeholder="Temple Name" ng-model="templeData.templeName" ng-change="onTempleChange(templeData)">
+        </label>
+        <br>
+
+        <span style="color:red;font-size:20px">{{errorLevel}}</span>
+         <span style="color:red;font-size:30px">*</span>
+         <label class = "item item-input item-select input">
+           <div class = "input-label"> Select option </div>
+    <select ng-model="templeData.level" ng-change ="onSelectLevel(templeData)" >
+              <option value="">--  --</option>
+              <option value="endowment" >A - Endowment Temple</option>
+              <option value ="peetham">B - Peetham</option>
+              <option value="localTemple">C - Local Temple</option>
+              <option value="vst">D - Very Small Temple</option>
+            </select>
+    </label>
+    <p  ng-show="templeData.level == 'peetham'">
+        <label class="item item-input input"> 
+          <input type="email" placeholder="Peetham Name" ng-model="templeData.peethamName">
+        </label>
+    </p>
+     <br>
+     <span style="color:red;font-size:20px">{{errorGodName}}</span>
+      <span style="color:red;font-size:30px">*</span>
+        <label class="item item-input input" >
+          <input type="text" placeholder="God Name" ng-model="templeData.godName" ng-change ="onChangeGodName(templeData)">
+        </label>
+   <br>
+        <label class="item item-input input" >
+          <input type="text" placeholder="Temple area name" ng-model="templeData.templeAreaName">
+        </label>
+<br>
+     <label class="item item-input input" >
+          <input type="text" placeholder="Village Name" ng-model="templeData.villageName">
+        </label>
+        <br>
+        <label class="item item-input input" >
+          <input type="text" placeholder="Mandal Name" ng-model="templeData.mandalName">
+        </label>
+        <br>
+        <label class="item item-input input" >
+          <input type="text" placeholder="District Name" ng-model="templeData.districtName">
+        </label>
+        <br>
+      
+       <label class="item item-input input" >
+          <input type="text" placeholder="poojariName" ng-model="templeData.poojariName">
+        </label>
+        <br>
+
+         <label class="item item-input input" >
+          <input type="text" placeholder="Poojari Phone Number" ng-model="templeData.poojariNumber">
+        </label>
+        <br>
+
+         <label class="item item-input input" >
+          <input type="text" placeholder="Important Events Name" ng-model="templeData.importantEventsName">
+        </label>
+        <br>
+
+         <label class="item item-input input" >
+          <input type="date" placeholder="Important Events date" ng-model="templeData.importantEventDate">
+        </label>
+        <br>
+
+         <label class="item item-input input" >
+          <input type="text" placeholder="Temple Ceremony" ng-model="templeData.templeCeremony">
+        </label>
+        <br>
+
+
+
+        <label class = "item item-input item-select input">
+   <div class = "input-label">
+      State
+   </div>
+    <select  id="state" ng-model="templeData.state" >
+                        <option value="">-- Select option --</option>
+                        <option >Andhra Pradesh</option>
+                        <option >Telangana</option>
+      </select>
+       </label><br>
+       <p ng-show ="templeData.level == 'endowment'">
+        <label class="item item-input input" >
+          <input type="text" placeholder="EO Name" ng-model="templeData.eoName">
+        </label>
+    </p>
+        <p ng-show ="templeData.level == 'endowment'">
+        <label class="item item-input input" >
+          <input type="text" placeholder="EO number(91-036-78658)" ng-model="templeData.eoPhoneNumber">
+        </label>
+        </p>
+         <label class="item item-input input" >
+          <input type="text" placeholder="Chairman Name" ng-model="templeData.chairmanName">
+        </label><br>
+         <label class="item item-input input" >
+          <input type="text" placeholder="Chairman Number(91-036-78658)" ng-model="templeData.chairmanphoneNumber">
+        </label><br>
+         <label class="item item-input input" >
+          <input type="text" placeholder="Trusty Name" ng-model="templeData.trustName">
+        </label><br>
+        <label class="item item-input input" >
+          <input type="text" placeholder="Trusty Numbe(91-036-78658)" ng-model="templeData.trustyPhoneNumber">
+        </label><br>
+        <span style="color:red;font-size:20px">{{errorReporterName}}</span>
+         <span style="color:red;font-size:30px">*</span>
+        <label class="item item-input input" >
+          <input type="text" placeholder="Reporter Name" ng-model="templeData.reporterName" ng-change="onChangeReporterName(templeData)">
+        </label><br>
+        <span style="color:red;font-size:20px">{{errorReporterPhone}}</span>
+         <span style="color:red;font-size:30px">*</span>
+         <label class="item item-input input" >
+          <input type="text" placeholder="Reporter Number(91-036-78658)" ng-model="templeData.phoneNumber" ng-change="onChangeReporterPhone(templeData)">
+        </label><br>
+        <p >Local cable network details(మీ ఏరియాలో మ‌న <b><span style="color:#892727">జయ జయ శంకర టీవీ</span> </b> ఛాన‌ల్ ఏ నెట్ వ‌ర్క్ లో , ఏ నంబ‌ర్ లో వ‌స్తుంది) </p>
+         <label class="item item-input input" >
+          <input type="text" placeholder="Local cable network" ng-model="templeData.localCablenetworkDetails">
+        </label>
+        <label class="item item-input input" >
+          <input type="text" placeholder="Aditional Information" ng-model="templeData.additionalInfo">
+        </label>
+                 <p>Search Temple Address </p> 
+                 <label class="item item-input input" >
+                        <input type="text" ng-model="searchPlace" ng-change="onEnterSearchAddress()" autofocus>
+                      </label>
+                      <br>
+                            <center>
+                           <button class="btn btn-primary btn-sm" type="button" ng-click= "search(searchPlace)" >Search</button>
+                           </center>
+                           <br>
+                              <div  id="map" style="width: auto; height: 200px;"> </div>
+         
+      <button  class="button button-dark  button-block" type="button" style="margin-bottom: 50px;" ng-click="submit(templeData)" >Submit</button>
+    </form>
+  </ion-content>
+  <div class="bar bar-footer bar-balanced footerBar">
+        <div class = "button-bar bar-balanced">
+   <button class="button button-icon button-clear ion-home footerButton" ui-sref="side-menu21.jayaJayaShankara({})" menu-close="" style="color: rgb(116,116,116)!important;"></button>
+   <button class="button button-icon button-clear ion-android-notifications footerButton" ui-sref="side-menu21.notification" menu-close="" style="color: rgb(116,116,116)!important;"></button>
+  <button class="button button-icon button-clear ion-android-settings footerButton" ui-sref="side-menu21.settings" menu-close="" style="color: rgb(116,116,116)!important;"></button>
+   <button class="button button-icon button-clear ion-log-out footerButton" ng-click="logout();" style="color: rgb(116,116,116)!important;"></button>
+</div> 
+        
+    </div>
+</ion-view>
+

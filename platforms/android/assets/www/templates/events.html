@@ -1,0 +1,38 @@
+<ion-view title="EVENTS" id="page1" style="background-color:white;" ng-model="vis">
+  <ion-nav-buttons side="right" class="has-header">
+   
+  </ion-nav-buttons>
+  <ion-content padding="true" style="margin-bottom: 40px;" class="has-header">
+
+    <h2 style="color: red">{{error}}</h2>
+      
+      <ion-list>
+        <div ng-repeat="group in groups">
+          <ion-item class="item-stable bar-positive" 
+                    ng-click="toggleGroup(group)"
+                    ng-class="{active: isGroupShown(group)}" style="background-color: rgb(116,116,116)!important;border-radius: 10px;margin-bottom: 5px;color: white;padding: 8px;">
+              <i class="icon" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i>
+            &nbsp;
+            {{group.name}}<br><button class="w3-btn w3-white w3-border w3-border-black w3-round-large" style="background: rgb(251, 216, 2)!important; border-color: rgb(66, 103, 178)!important; color: black;padding: 3px 8px;border-radius: 50px!important;float: right;margin-top: -26px" ng-click="shareAnyWhere($index)" > <i class="icon ion-android-share"></i></button>
+          </ion-item>
+          <ion-item class="item-accordion"
+                    ng-repeat="item in group.items"
+                    ng-show="isGroupShown(group)"><div align="center" ng-bind-html="item" style="padding: 5px;"></div>
+          </ion-item>
+        </div>
+      </ion-list>
+
+  </ion-content>
+
+<div class="bar bar-footer bar-balanced footerBar">
+        <div class = "button-bar bar-balanced">
+   <button class="button button-icon button-clear ion-home footerButton" ui-sref="side-menu21.jayaJayaShankara({})" menu-close="" style="color: rgb(116,116,116)!important;"></button>
+   <button class="button button-icon button-clear ion-android-notifications footerButton" ui-sref="side-menu21.notification" menu-close="" style="color: rgb(116,116,116)!important;"></button>
+  <button class="button button-icon button-clear ion-android-settings footerButton" ui-sref="side-menu21.settings" menu-close="" style="color: rgb(116,116,116)!important;"></button>
+   <button class="button button-icon button-clear ion-log-out footerButton" ng-click="logout();" style="color: rgb(116,116,116)!important;"></button>
+</div> 
+        
+    </div>
+      
+
+</ion-view>

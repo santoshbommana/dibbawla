@@ -1,0 +1,34 @@
+<ion-view title="PROMOS" id="page1" style="background-color:white;" ng-model="vis">
+ <ion-nav-buttons side="right" class="has-header">
+   
+  </ion-nav-buttons>
+  <ion-content padding="true" style="margin-bottom: 40px;" class="has-header">
+  		<!-- <img src="img/jjs.gif"> -->
+  	<!-- <h1 style="color: red">Promos</h1> -->
+      <div class="list card" ng-repeat="video in videos">
+      <div class="item item-text-wrap">
+        <h2>{{video.snippet.title}}</h2>
+        <!-- <p>{{video.snippet.publishedAt }}</p> -->
+      </div>
+      <div class="item item-image">
+      <!--   <img ng-src="{{video.snippet.thumbnails.high.url}}"> -->
+     
+      	<div class="embed-responsive embed-responsive-16by9">
+        <youtube-video class="embed-responsive-item" video-id="video.id.videoId"></youtube-video>
+        </div>
+     
+      </div>
+
+    </div>
+
+  </ion-content>
+  <div class="bar bar-footer bar-balanced footerBar">
+        <div class = "button-bar bar-balanced">
+   <button class="button button-icon button-clear ion-home footerButton" ui-sref="side-menu21.jayaJayaShankara({})" menu-close="" style="color: rgb(116,116,116)!important;"></button>
+   <button class="button button-icon button-clear ion-android-notifications footerButton" ui-sref="side-menu21.notification" menu-close="" style="color: rgb(116,116,116)!important;"></button>
+  <button class="button button-icon button-clear ion-android-settings footerButton" ui-sref="side-menu21.settings" menu-close="" style="color: rgb(116,116,116)!important;"></button>
+   <button class="button button-icon button-clear ion-log-out footerButton" ng-click="logout();" style="color: rgb(116,116,116)!important;"></button>
+</div> 
+        
+    </div>
+</ion-view>

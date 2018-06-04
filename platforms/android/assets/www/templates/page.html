@@ -1,0 +1,121 @@
+<ion-view title="Page" id="page11" style="background-color:white;">
+ <ion-nav-buttons side="right" class="has-header">
+   
+  </ion-nav-buttons>
+  <ion-content padding="true" style="margin-bottom: 40px;">
+
+        <label class="item item-input input" >
+          <input type="text" placeholder="Institution / Personality Name" ng-model="pagedata.name">
+        </label>
+        <br>
+    <label class = "item item-input item-select input">
+   <div class = "input-label">
+      category level
+   </div>
+    <select id="level" ng-model="pagedata.level" required style="color: slategray">
+              <option value="">-- Select option --</option>
+              <option >A </option>
+              <option >B</option>
+              <option >C</option>
+              <option >D</option>
+            </select>
+    </label>
+        <br>
+    <label class = "item item-input item-select input">
+   <div class = "input-label">
+      Institution / Personality Type
+   </div>
+    <select id="type" ng-model="pagedata.type" required>
+              <option value="">-- Select option --</option>
+             <option >Astrology </option>
+              <option >Ayurvedam</option>
+              <option >Associations and Trusts</option>
+              <option >Cultural Art Forms</option>
+              <option >Devotional Literature</option>
+              <option >Events</option>
+           <!--    <option >Festivals</option> -->
+              <option >Folk Art Forms (Harikatha/BurraKatha /Uggu Kadha)</option>
+              <option >Gurukuls</option>
+              <option >Goshalas</option>
+              <option >Hindu Preachers</option>
+            <!--   <option >Jaatheyaalu </option>
+              <option >Mantralu</option> -->
+              <option >Musicians </option>
+              <option >Music Colleges </option>
+              <option >Nadaswaram & Mandali </option>
+              <option >Numerology </option>
+              <option >Organisations</option>
+              <option >Peethams</option>
+              <option >Priests</option>
+              <option >Puja Stores </option>    
+            <!--   <option >Slokalu</option> -->
+              <option >Spiritual NGOs</option>
+              <option >Spiritual Commercial Organisations</option>
+              <option >Spiritual Institutions</option>
+             <!-- <option >Stotralu</option>
+              <option >Temples</option> -->
+              <option >Travels</option>                     
+              <option >Vaastu</option>
+              <option >Vedic Colleges</option>
+              <option >Yoga</option>
+            </select>
+    </label><br>
+         <label class="item item-input input" >
+          <input type="text" placeholder="Contact Person" ng-model="pagedata.contactPerson">
+        </label><br>
+         <label class="item item-input input" >
+          <input type="text" placeholder="Address" ng-model="pagedata.address">
+        </label><br>
+        <p><img src="../img/Rolling.gif" ng-show="loadingAuto" style="width: 15px;height: 15px;"> <span style="color: red;font-size:15px ">{{validationError}}</span></p>
+         <label class="item item-input input" >
+          <input type="text" placeholder="Phone Number(91-26-23564)" ng-model="pagedata.phoneNumber" ng-change="phoneNumberValidation(pagedata)">
+        </label><br>
+         <label class="item item-input input" >
+          <input type="text" placeholder="Updated By" ng-model="pagedata.updatedBy">
+        </label><br>
+        <p style="color:#892727;font-size: 18px;">Existing online pages of this person:</p>
+        <ul class = "list">
+
+   <li class = "item item-checkbox  checkbox-positive input">
+      FaceBook
+      <label class = "checkbox">
+         <input type = "checkbox" ng-model="pagedata.facebook" ng-true-value="'YES'" ng-false-value="'NO'"/>
+      </label>
+   </li>
+
+   <li class = "item item-checkbox  checkbox-calm input">
+      WebSite
+      <label class = "checkbox">
+         <input type = "checkbox" ng-model="pagedata.website" ng-true-value="'YES'" ng-false-value="'NO'"/>
+      </label>
+   </li>
+
+   <li class = "item item-checkbox  checkbox-assertive input">
+      YouTube
+      <label class = "checkbox">
+         <input type = "checkbox" ng-model="pagedata.youtube" ng-true-value="'YES'" ng-false-value="'NO'"/>
+      </label>
+   </li>
+
+   <li class = "item item-checkbox  checkbox-dark input">
+      Mobile App
+      <label class = "checkbox">
+         <input type = "checkbox" ng-model="pagedata.mobileapp" ng-true-value="'YES'" ng-false-value="'NO'"/>
+      </label>
+   </li>
+</ul>
+         <button  class="button button-dark  button-block" type="submit" style="margin-bottom: 50px;"  ng-click="save(pagedata)" ng-disabled="enableSaveButton()" >Submit</button>
+
+<!-- form submit is not working -->
+
+  </ion-content>
+  <div class="bar bar-footer bar-balanced footerBar">
+        <div class = "button-bar bar-balanced">
+   <button class="button button-icon button-clear ion-home footerButton" ui-sref="side-menu21.jayaJayaShankara({})" menu-close="" style="color: rgb(116,116,116)!important;"></button>
+   <button class="button button-icon button-clear ion-android-notifications footerButton" ui-sref="side-menu21.notification" menu-close="" style="color: rgb(116,116,116)!important;"></button>
+  <button class="button button-icon button-clear ion-android-settings footerButton" ui-sref="side-menu21.settings" menu-close="" style="color: rgb(116,116,116)!important;"></button>
+   <button class="button button-icon button-clear ion-log-out footerButton" ng-click="logout();" style="color: rgb(116,116,116)!important;"></button>
+</div> 
+        
+    </div>
+</ion-view>

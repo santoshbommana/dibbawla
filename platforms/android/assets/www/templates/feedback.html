@@ -1,0 +1,31 @@
+<ion-view title="Feedback" id="page1" style="background-color:white;" ng-model="vis">
+  <ion-nav-buttons side="right" class="has-header">
+
+  </ion-nav-buttons>
+  <ion-content padding="true" style="margin-bottom: 40px;" class="has-header">
+  <p>{{feedbackError}}</p>
+  <p><h4 style="color: seagreen;">మీ అభిప్రాయాన్ని పంచుకోండి</h4></p>
+  <div style="margin-top: 50px">
+  	<form class="w3-container">
+  <input class="w3-input w3-animate-input" type="text" style="width:80%;border-bottom:rgb(251, 216, 2) 1px solid;" placeholder="Name" ng-model="feedback.name"><br>
+  <input class="w3-input w3-animate-input" type="text" style="width:80%;border-bottom:rgb(251, 216, 2) 1px solid;"
+  ng-model="feedback.mobileNumber" placeholder="Mobile Number"><br>
+  <textarea class="w3-input w3-animate-input" rows="6" placeholder="enter text here..........." ng-model="feedback.message" style="width:80%;border-bottom:rgb(251, 216, 2) 1px solid;"></textarea><br>
+</form>
+  </div>
+  
+<div align="center">
+<button class="w3-btn w3-white w3-border w3-border-black w3-round-large" style="border-color: rgb(66, 103, 178)!important; color: black;padding: 8px 15px;;border-radius: 50px!important;" ng-click="submit();"> Submit</button>
+	  </div>
+<div align="center" style="margin-top: 25px;"><h4 style="color:rgba(196,100,239,1.00)">{{successMessage}}</h4></div>
+</ion-content>
+ <div class="bar bar-footer bar-balanced footerBar">
+        <div class = "button-bar bar-balanced">
+   <button class="button button-icon button-clear ion-home footerButton" ui-sref="side-menu21.jayaJayaShankara({})" menu-close="" style="color: rgb(116,116,116)!important;"></button>
+   <button class="button button-icon button-clear ion-android-notifications footerButton" ui-sref="side-menu21.notification" menu-close="" style="color: rgb(116,116,116)!important;"></button>
+  <button class="button button-icon button-clear ion-android-settings footerButton" ui-sref="side-menu21.settings" menu-close="" style="color: rgb(116,116,116)!important;"></button>
+   <button class="button button-icon button-clear ion-log-out footerButton" ng-click="logout();" style="color: rgb(116,116,116)!important;"></button>
+</div> 
+        
+    </div>
+</ion-view>

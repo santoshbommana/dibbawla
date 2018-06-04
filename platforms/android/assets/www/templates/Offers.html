@@ -1,0 +1,46 @@
+
+ <ion-view title="AD Tariff Packages" id="page1" style="background-color:white;" ng-model="vis">
+  <ion-nav-buttons side="right" class="has-header">
+   
+  </ion-nav-buttons>
+<!--  <ion-content padding="true" style="background: url(img/15i6BvbrQU6aYtg35S2V_texture.png) no-repeat center;background-size:cover;" class="has-header">-->
+    <ion-content padding="true" class="has-header" style="margin-bottom: 40px;">
+
+    <h2 style="color: red">{{error}}</h2>
+
+      <ion-list>
+        <div ng-repeat="group in groups">
+          <ion-item class="item-stable bar-positive" 
+                    ng-click="toggleGroup(group)"
+                    ng-class="{active: isGroupShown(group)}" style="background-color: rgb(116,116,116)!important;border-radius: 10px;margin-bottom: 5px;color: white;padding: 8px;">
+              <i class="icon" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i>
+            &nbsp;
+            {{group.name}}<br><button class="w3-btn w3-white w3-border w3-border-black w3-round-large" style="background: rgb(251, 216, 2)!important; border-color: rgb(66, 103, 178)!important; color: black;padding: 3px 8px;border-radius: 50px!important;float: right;margin-top: -26px" ng-click="shareAnyWhere($index)" > <i class="icon ion-android-share"></i></button>
+          </ion-item>
+          <div ng-show="isGroupShown(group)" style="border: rgb(96, 44, 44) 1px solid;margin-bottom: 5px;">
+          <div align="center" style="background-color: rgb(96, 44, 44);color: white;padding: 3px;padding-top: 6px;"><h5>{{group.cost}}</h5></div>
+          <div style="width: 100%;">
+          	<div align="center"><h4><b>Deliverables</b></h4></div>
+          	<div style="padding: 10px;"  ng-repeat="item in group.items track by $index"><p style="margin-bottom: -5px!important;">
+          	
+          	{{item.offerDetals}}</p></div>
+          </div>
+      
+        </div>
+        </div>
+      </ion-list>
+
+</ion-content>
+
+<div class="bar bar-footer bar-balanced footerBar">
+        <div class = "button-bar bar-balanced">
+   <button class="button button-icon button-clear ion-home footerButton" ui-sref="side-menu21.jayaJayaShankara({})" menu-close="" style="color: rgb(116,116,116)!important;"></button>
+   <button class="button button-icon button-clear ion-android-notifications footerButton" ui-sref="side-menu21.notification" menu-close="" style="color: rgb(116,116,116)!important;"></button>
+  <button class="button button-icon button-clear ion-android-settings footerButton" ui-sref="side-menu21.settings" menu-close="" style="color: rgb(116,116,116)!important;"></button>
+   <button class="button button-icon button-clear ion-log-out footerButton" ng-click="logout();" style="color: rgb(116,116,116)!important;"></button>
+</div> 
+        
+    </div>
+</ion-view>
+
+

@@ -1,0 +1,43 @@
+<ion-view title="Leaves" id="page1" style="background-color:white;" ng-model="vis">
+  <ion-nav-buttons side="right" class="has-header">
+  
+  </ion-nav-buttons>
+  <ion-content padding="true" style="margin-bottom: 40px;" class="has-header">
+  <div align="center">
+   <form id="contact-form5" class="w3-container">
+   <input class="w3-input w3-animate-input" type="date" style="width:80%;border-bottom:rgb(251, 216, 2) 1px solid;" placeholder="date" ng-model="leave.date"><br>
+<input class="w3-input w3-animate-input" type="text" style="width:80%;border-bottom:rgb(251, 216, 2) 1px solid;" placeholder="Name" ng-model="leave.name" disabled><br>
+    <input class="w3-input w3-animate-input" type="text" style="width:80%;border-bottom:rgb(251, 216, 2) 1px solid;" placeholder="Designation" ng-model="leave.designation"><br>
+    <input class="w3-input w3-animate-input" type="text" style="width:80%;border-bottom:rgb(251, 216, 2) 1px solid;" 
+    placeholder="Department" ng-model="leave.department" disabled><br>
+    <input class="w3-input w3-animate-input" type="text" style="width:80%;border-bottom:rgb(251, 216, 2) 1px solid;" 
+    placeholder="EmployeeId" ng-model="leave.employeeId"><br>
+    <input class="w3-input w3-animate-input" type="email" style="width:80%;border-bottom:rgb(251, 216, 2) 1px solid;" 
+    placeholder="example@something.com" ng-model="leave.email"><br>
+    <input class="w3-input w3-animate-input" type="text" style="width:80%;border-bottom:rgb(251, 216, 2) 1px solid;" placeholder="From Date"  onfocus="(this.type='date')" onblur="(this.type='text')" ng-model="leave.from" ><br>
+     <input class="w3-input w3-animate-input" type="text" style="width:80%;border-bottom:rgb(251, 216, 2) 1px solid;" placeholder="To Date" onfocus="(this.type='date')" onblur="(this.type='text')" ng-model="leave.to"><br>
+<!--    <input class="w3-input w3-animate-input" type="number" style="width:80%;border-bottom:rgb(251, 216, 2) 1px solid;" placeholder="No. Of Date" ng-model="leave.numberOfDays"><br>-->
+    <input class="w3-radio" type="radio" name="leaveSL" ng-model="leave.type" value="sl">
+   	<label>SL</label>
+	<input class="w3-radio" type="radio" name="leaveCL" ng-model="leave.type" value="cl">
+	<label>CL</label>
+	<input class="w3-radio" type="radio" name="leaveEL" ng-model="leave.type" value="el">
+	<label>EL</label><br>
+  <textarea class="w3-input w3-animate-input" rows="6" placeholder="enter reason here..........." ng-model="leave.reason" style="width:80%;border-bottom:rgb(251, 216, 2) 1px solid;"></textarea><br>
+     <div align="center" style="margin-bottom: 20px;">
+<button class="w3-btn w3-white w3-border w3-border-black w3-round-large" style="border-color: rgb(66, 103, 178)!important; color: black;padding: 8px 15px;;border-radius: 50px!important;" type="submit" ng-click="submit()" > Submit</button>
+  <p style="color:darkgreen;margin-top: 10px;">{{sucessMassage}}</p>
+	  </div>
+      </form>
+   </div>
+</ion-content>
+<div class="bar bar-footer bar-balanced footerBar">
+        <div class = "button-bar bar-balanced">
+   <button class="button button-icon button-clear ion-home footerButton" ui-sref="side-menu21.jayaJayaShankara({})" menu-close="" style="color: rgb(116,116,116)!important;"></button>
+   <button class="button button-icon button-clear ion-android-notifications footerButton" ui-sref="side-menu21.notification" menu-close="" style="color: rgb(116,116,116)!important;"></button>
+  <button class="button button-icon button-clear ion-android-settings footerButton" ui-sref="side-menu21.settings" menu-close="" style="color: rgb(116,116,116)!important;"></button>
+   <button class="button button-icon button-clear ion-log-out footerButton" ng-click="logout();" style="color: rgb(116,116,116)!important;"></button>
+</div> 
+        
+    </div>
+</ion-view>

@@ -1,0 +1,49 @@
+<!--<ion-view title="JJS DATA" id="page1" style="background-color:white;" ng-model="vis">-->
+  <ion-content padding="true"  style="margin-top: 38px!important;">
+  	<div align="center" >
+ 
+  	<div>
+  	<div class = "bar bar-header" style="background-color:rgb(251, 216, 2)!important;">
+   <h1 class = "title">Login With Pin</h1>
+</div>
+ 	<div style="margin-top: 100px;">
+   <form>
+   <p style="color: red;">{{passCodeError}}</p>
+   <input class="w3-input w3-animate-input" type="password" style="width:50%;border-bottom:rgb(251, 216, 2) 1px solid;" placeholder=" 4 digit PassCode" ng-model="login.passPin"  maxlength="4"><br>
+   <button class="w3-btn w3-white w3-border w3-border-black w3-round-large" style="border-color: rgb(66, 103, 178)!important; color: black;padding: 8px 15px;border-radius: 50px!important;" ng-click="loginSuccess()" >Login</button>
+   <button class="w3-btn w3-white w3-border w3-border-black w3-round-large" style="border-color: rgb(66, 103, 178)!important; color: black;padding: 8px 15px;border-radius: 50px!important;" ng-click="forgotPin()" >Forgot pin</button>
+   </form>
+   </div>
+  	</div>
+  	<div ng-show="seven">
+  	<div class = "bar bar-header" style="background-color:rgb(251, 216, 2)!important;">
+   <h1 class = "title">Change Pin</h1>
+</div>
+ 	<div style="margin-top: 100px;">
+   <form>
+   <p style="color: red;">{{phoneNumberError}}</p>
+   <input class="w3-input w3-animate-input" type="password" style="width:50%;border-bottom:rgb(251, 216, 2) 1px solid;" placeholder="enter phone number" ng-model="login.phoneNumber"  maxlength="10"><br>
+   <button class="w3-btn w3-white w3-border w3-border-black w3-round-large" style="border-color: rgb(66, 103, 178)!important; color: black;padding: 8px 15px;border-radius: 50px!important;" ng-click="phoneNumberValidation()" >Continue</button>
+   </form>
+   </div>
+  	</div>
+  	<div ng-show="eight">
+  	<div class = "bar bar-header" style="background-color:rgb(251, 216, 2)!important;">
+   <h1 class = "title">Change Pin</h1>
+</div>
+ 	<div style="margin-top: 100px;">
+   <form>
+   <p style="color: red;">{{changePinError}}</p>
+   <input class="w3-input w3-animate-input" type="password" style="width:50%;border-bottom:rgb(251, 216, 2) 1px solid;" placeholder=" 4 digit PassCode" ng-model="login.newPassPin"  maxlength="4"><br>
+   <input class="w3-input w3-animate-input" type="password" style="width:50%;border-bottom:rgb(251, 216, 2) 1px solid;" placeholder=" 4 digit PassCode" ng-model="login.reEnternewPassPin"  maxlength="4" ng-change ="changePinValidation();"><br>
+   <button class="w3-btn w3-white w3-border w3-border-black w3-round-large" style="border-color: rgb(66, 103, 178)!important; color: black;padding: 8px 15px;border-radius: 50px!important;" ng-click="changePin()" ng-disabled="changePinButton" >Submit</button>
+   </form>
+   </div>
+  	</div>
+ 
+</div>
+
+  </ion-content>
+
+<!--</ion-view>-->
+

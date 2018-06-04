@@ -1,0 +1,53 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-console": {
+      "PACKAGE_NAME": "com.ionicframework.jjs248983"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.ionicframework.jjs248983"
+    },
+    "cordova-plugin-network-information": {
+      "PACKAGE_NAME": "com.ionicframework.jjs248983"
+    },
+    "cordova-plugin-sim": {
+      "PACKAGE_NAME": "com.ionicframework.jjs248983"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.ionicframework.jjs248983"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.ionicframework.jjs248983"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.ionicframework.jjs248983"
+    },
+    "cordova-plugin-x-toast": {
+      "PACKAGE_NAME": "com.ionicframework.jjs248983"
+    },
+    "ionic-plugin-keyboard": {
+      "PACKAGE_NAME": "com.ionicframework.jjs248983"
+    },
+    "phonegap-plugin-push": {
+      "SENDER_ID": "568959423988",
+      "PACKAGE_NAME": "com.ionicframework.jjs248983"
+    },
+    "cordova-plugin-x-socialsharing": {
+      "PACKAGE_NAME": "io.cordova.helloCordova"
+    },
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "io.cordova.helloCordova"
+    }
+  },
+  "dependent_plugins": {
+    "es6-promise-plugin": {
+      "PACKAGE_NAME": "io.cordova.helloCordova"
+    }
+  }
+}

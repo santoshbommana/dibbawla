@@ -160,9 +160,6 @@
     }
   },
   "installed_plugins": {
-    "cordova-plugin-console": {
-      "PACKAGE_NAME": "com.ionicframework.jjs248983"
-    },
     "cordova-plugin-device": {
       "PACKAGE_NAME": "com.ionicframework.jjs248983"
     },
@@ -338,7 +335,6 @@
     }
   ],
   "plugin_metadata": {
-    "cordova-plugin-console": "1.0.4",
     "cordova-plugin-device": "1.1.3",
     "cordova-plugin-network-information": "1.3.1",
     "cordova-plugin-sim": "1.3.2",

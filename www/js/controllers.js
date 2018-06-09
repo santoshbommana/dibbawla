@@ -747,9 +747,9 @@ angular.module('app.controllers', [])
 				var imageURL = res[1].split("=");
 				var finalShareImage = imageURL[1];
 				var shareImageDescription = $scope.groups[index].name;
-				var webSite = 'https://bhakthibhavam.mybluemix.net/';
+				var webSite = 'http://www.jayajayashankara.tv/';
 				var youtube = 'https://www.youtube.com/channel/UC2lXJEFZI_t1ewgiUOg-Amw';
-				var facebook = 'https://www.facebook.com/bhakthibhavam';
+				var facebook = 'https://www.facebook.com/jayajayashankaratv';
 
 				var finalText = 'JayaJayaShankara TV.Conducting a prestigious Event - ' + shareImageDescription + ': ' + finalShareImage + '\n' + 'For more updates visit www.jayajayashankara.tv ' + '\n' +
 					'Follow us on: ' + '\n' + "youtube: " + youtube + '\n' + "facebook: " + facebook;

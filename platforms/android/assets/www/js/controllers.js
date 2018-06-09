@@ -1644,7 +1644,7 @@ angular.module('app.controllers', [])
 			$global
 		) {
 			var employeeNumber=$global.getNumber();
-			alert(employeeNumber);
+			//alert(employeeNumber);
 			$scope.leave = [];
 			var userData = $global.getuserData();
 			$scope.leave.department = userData[0].department;
@@ -1673,7 +1673,7 @@ angular.module('app.controllers', [])
 				// POST method for save data in to DB
 				//data for email
 				var data = {
-					date: $filter('date')($scope.leave.date, "dd-MM-yyyy"),
+					//date: $filter('date')($scope.leave.date, "dd-MM-yyyy"),
 					name: $scope.leave.name,
 					designation: $scope.leave.designation,
 					department: $scope.leave.department,
@@ -1696,7 +1696,8 @@ angular.module('app.controllers', [])
 					to: $filter('date')($scope.leave.to, "dd-MM-yyyy"),
 					reason: $scope.leave.reason,
 					fromMail: $scope.leave.email,
-					state :"notApproved"
+					state :"notApproved",
+					employeeMobileNumber:employeeNumber
 				}
 
 				var URL1 = 'https://whiznextapi.mybluemix.net/leave/v1/storeLeaveRecord';
@@ -1737,10 +1738,10 @@ angular.module('app.controllers', [])
 
 					return str.join('&');
 				}
-				var URL = 'https://whiznextapi.mybluemix.net/leave/v1/sendEmail';
+				var URL = 'http://localhost:3000/leave/v1/sendEmail';
 				var q = serialize(data)
 				var TARGET_URL = URL + "?" + q;
-
+                alert(TARGET_URL);
 				//final step:
 
 				//call the HTTP : and append the SEND THE URL  POST method 

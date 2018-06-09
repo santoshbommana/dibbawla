@@ -1543,3 +1543,12 @@
   height: 24px;
   line-height: 24px;
   padding: 0 24px; }
+.mybutton  {
+  isDanger: boolean = true;
+  isSecondary: boolean = false;
+  isRound: boolean = true;
+  isOutline: boolean = false;
+  isClear: boolean = true;
+  myColor: string = 'secondary';
+  myColor2: string = 'dark';
+}

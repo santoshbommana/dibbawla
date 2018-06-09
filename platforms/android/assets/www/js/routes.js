@@ -189,6 +189,6 @@ angular.module('app.routes', ['ngSanitize','ionic'])
   });
 
 
-$urlRouterProvider.otherwise('/side-menu21/page13');
+$urlRouterProvider.otherwise('/side-menu21/page14');
 
 });

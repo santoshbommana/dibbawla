@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="io.cordova.JTeam" version="0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>J-Team</name>
     <description>
         An Ionic Framework and Cordova project.
@@ -82,7 +82,6 @@
     <icon src="resources/ios/icon/icon-small@3x.png" />
     <allow-navigation href="http://192.168.1.25:8100" />
     <plugin name="cordova-plugin-device" spec="~1.1.3" />
-    <plugin name="cordova-plugin-console" spec="~1.0.4" />
     <plugin name="cordova-plugin-whitelist" spec="~1.3.0" />
     <plugin name="cordova-plugin-splashscreen" spec="~4.0.0" />
     <plugin name="cordova-plugin-statusbar" spec="~2.2.0" />
@@ -93,5 +92,6 @@
     <plugin name="cordova-plugin-x-socialsharing" spec="git+https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin.git" />
     <plugin name="cordova-plugin-camera" spec="git+https://github.com/apache/cordova-plugin-camera.git" />
     <allow-navigation href="http://192.168.1.66:8100" />
+    <allow-navigation href="http://192.168.1.104:8100" />
     <engine name="android" spec="7.0.0" />
 </widget>

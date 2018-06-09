@@ -3943,14 +3943,22 @@ a.subdued {
     color: #fff; }
     .bar.bar-assertive .title {
       color: #fff; }
+.footerButton{
+	border-color: white!important;
+	color: rgb(116,116,116)!important;
+}
+.footerBar{
+	border: rgb(251, 216, 2) 1px solid;
+	
+}
     .bar.bar-assertive.bar-footer {
       background-image: linear-gradient(180deg, #e42112, #e42112 50%, transparent 50%); }
   .bar.bar-balanced {
-    background-color: #33cd5f;
+    background-color: white;
     background-image: linear-gradient(0deg, #28a54c, #28a54c 50%, transparent 50%);
-    color: #fff; }
+    color: rgb(116,116,116); }
     .bar.bar-balanced .title {
-      color: #fff; }
+      color: rgb(116,116,116); }
     .bar.bar-balanced.bar-footer {
       background-image: linear-gradient(180deg, #28a54c, #28a54c 50%, transparent 50%); }
   .bar.bar-energized {
@@ -3973,11 +3981,11 @@ a.subdued {
       background-image: linear-gradient(180deg, #eadbaa, #eadbaa 50%, transparent 50%); }
   .bar.bar-dark {
     border-color: #111;
-    background-color: #872401;
+    background-color: rgb(251, 216, 2)!important;;
     background-image: linear-gradient(0deg, #111, #111 50%, transparent 50%);
-    color: #fff; }
+    color: #111; }
     .bar.bar-dark .title {
-      color: #fff; }
+      color: #111; }
     .bar.bar-dark.bar-footer {
       background-image: linear-gradient(180deg, #111, #111 50%, transparent 50%); }
   .bar .title {
@@ -3998,9 +4006,9 @@ a.subdued {
     font-weight: 500;
     line-height: 44px; }
     .bar .title.title-left {
-      text-align: left; }
+      text-align: center; }
     .bar .title.title-right {
-      text-align: right; }
+      text-align: center; }
   .bar .title a {
     color: inherit; }
   .bar .button, .bar button {
@@ -4241,10 +4249,10 @@ a.subdued {
 
 .bar-dark .button {
   border-color: #111;
-  background-color: #872401;
-  color: #fff; }
+  background-color: rgb(251, 216, 2)!important;;
+  color: #111; }
   .bar-dark .button:hover {
-    color: #fff;
+    color: #111;
     text-decoration: none; }
   .bar-dark .button.active, .bar-dark .button.activated {
     border-color: #000;
@@ -9800,25 +9808,50 @@ a.button {
 
 .menu-type {
   type: overlay !important; }
-
+.menu-class2 .item-content{
+	 background: none;
+    background:#4E0002 !important; 
+	color: white!important;
+}
 .menu-class1 {
   background: none;
-  color: white; }
+  color: white;
+	border:none;
+
+	 }
   .menu-class1 .item-content {
     background: none;
-    background: #9B2500 !important; }
+	  border:rgb(251, 216, 2) 1px solid;
+	  border-radius: 50px;
+	  padding: 5px!important;
+	  
+font-size: 16px;}
     .menu-class1 .item-content.activated {
-      background: #9B2500 !important; }
+      background: none; }
+.profile-menu .item-content{
+	 background:white;
+border-radius: 0px;
+	  border: 1px solid white;
+	  padding: 2px!important;
+	font-size: 12px;
+}
+.profile-menu .item-content.activated {
+      background: none;
+ background:white;
+border-radius: 0px;
+	  border: 1px solid white;
+	  padding: 2px!important;
+	font-size: 12px;}
 
 .myfooter{
   background: none;
-  background: #9B2500 !important;
+  background: rgb(251, 216, 2) !important;
   border: 2px solid #FFF4BC;
   color: #FFF4BC !important; }
 
 .visitatha {
   background: none;
-  background: #9B2500 !important;
+  background: rgb(251, 216, 2) !important;
   border-radius: 15px;
   padding: 20px; }
 
@@ -9877,6 +9910,56 @@ ui-gmap-google-map {
       height: 100%; }
 
 ion-view, .pane, .view {
-  background-color: #F2E9CB; }
+  background-color: white; }
+
+.wide-as-needed {
+  overflow: scroll;
+  white-space: nowrap;
+	padding-bottom: 55px!important;
+
+}
+.scroll { 
+  min-width: 100%;
+
+}
+.bar.bar-loading {
+  display: block;
+  height: 100px;
+  pading:20px;
+  /* starts right below a normal header */
+  top: 44px;
+  
+  /* make the text centered vertically and horizontally */
+  text-align: center;
+  padding: 0;
+  line-height: 24px;
+
+  /* transition 'sliding down' (check below)*/
+  -webkit-transition: 200ms all;
+}
 
 
+/* 
+ * make the content's top changes animate.
+ * might not always look good, but looks
+ * good when our loader is added & removed
+ */
+.has-header {
+  -webkit-transition: 200ms top;
+}
+.has-header.has-loading {
+  /* 44px (header) + 24px */
+  top: 68px;
+}
+
+/* make loading bar slide up/down */
+.bar-loading.ng-enter,
+.bar-loading.ng-leave.ng-leave-active {
+  height: 0;
+  border-width: 0px;
+}
+.bar-loading.ng-enter.ng-enter-active,
+.bar-loading.ng-leave {
+  height: 24px;
+  border-width: 1px;
+}

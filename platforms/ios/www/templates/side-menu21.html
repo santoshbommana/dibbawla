@@ -1,38 +1,81 @@
-<ion-side-menus enable-menu-with-back-views="true">
-  <ion-side-menu-content>
-    <ion-nav-bar class="bar-dark">
+<ion-side-menus enable-menu-with-back-views="true" >
+  <ion-side-menu-content >
+    <ion-nav-bar class="bar-dark" >
       <ion-nav-back-button></ion-nav-back-button>
       <ion-nav-buttons side="left">
-        <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left" style="color:black!important; "></button>
       </ion-nav-buttons>
     </ion-nav-bar>
     <ion-nav-view name="side-menu21"></ion-nav-view>
   </ion-side-menu-content>
-  <ion-side-menu side="left" id="side-menu21" style="background-color:#FFF6C7;">
-    <ion-header-bar class="bar-dark">
-      <div class="title"></div>
-    </ion-header-bar>
-    <ion-content padding="true" class="side-menu-left has-header menu-type">
-      <div class="spacer" style="width: 268px; height: 14px;"></div>
-      <div>
-        <img src="img/txgGzlDdQFmpFOxk3NfV_logo.png" style="display: block; width: 50%; height: auto; margin-left: auto; margin-right: auto;">
+  <ion-side-menu side="left" id="side-menu21" style="width:150px!important">
+    <ion-header-bar class="bar-dark" style="background:rgba(0,0,0,1.00)!important">
+      <div align="center" class="title" ></div>
+      <img src="img/txgGzlDdQFmpFOxk3NfV_logo.png" style="display: block; width: 15%; height: auto; margin-left: auto; margin-right: auto;">
+<!--
+      <button class="w3-btn w3-white w3-border w3-border-black w3-round-large" style="border-color: rgb(251, 216, 2)!important;border-radius: 100px!important;float: right;background: rgb(251, 216, 2);padding: 0px 0px;width: 40px;height: 40px; margin-top: -5px!important;" ng-click="shoeProfileMenu();"><img src="img/user.png" style="border-color: rgb(251, 216, 2)!important; color: black;border-radius: 50px!important;width: 40px;height: 40px;"></button><span style="margin-top: 5px!important;font-size: 12px; float: right;"></span>
+      <div ng-show="profileMenu" style="width: 50%;margin-left: -30px!important;margin-top: -5px;"><br><br>
+      <ion-list id="side-menu21-list1" style="background:white!important;">
+      	<ion-item  ui-sref="side-menu21.settings" menu-close="" class="profile-menu" ng-click="shoeProfileMenu();">Settings <i class="icon ion-settings" style="float: right!important;"></i></ion-item>
+      	<ion-item  ui-sref="side-menu21.notification" menu-close="" class="profile-menu" ng-click="shoeProfileMenu();">Notifications <i class="icon ion-information" style="float: right!important;"></i></ion-item>
+      	<ion-item ui-sref="side-menu21.notification" menu-close="" class="profile-menu" ng-click="shoeProfileMenu();logout();">Logout <i class="icon ion-log-out" style="float: right!important;"></i></ion-item>
+      	</ion-list>
       </div>
-      <h3 id="side-menu21-heading3" style="color:#510F0C;text-align:center;">JAYA JAYA SHANKARA</h3>
+-->
+    </ion-header-bar>
+    <ion-content padding="true" class="side-menu-left has-header menu-type" style="background: linear-gradient(to bottom, rgba(20,20,20,1) 0%, rgba(107,107,107,1) 100%);">
+<!--
       <div class="spacer" style="width: 268px; height: 14px;"></div>
-      <ion-list id="side-menu21-list1">
+      <div> <img src="img/txgGzlDdQFmpFOxk3NfV_logo.png" style="display: block; width: 20%; height: auto; margin-left: auto; margin-right: auto;"> </div>
+-->
+      <h3 id="side-menu21-heading3" style="color:white;text-align:center;font-size: 12px">J-TEAM</h3>
+      <div class="spacer" style="width: 268px; height: 14px;"></div>
       <ion-list id="side-menu21-list1">
         <ion-item id="side-menu21-list-item1" ui-sref="side-menu21.jayaJayaShankara({})" menu-close="" class="menu-class1">Home</ion-item>
-        <ion-item id="side-menu21-list-item2" ui-sref="side-menu21.schedule" menu-close="" class="menu-class1">Schedule</ion-item>
-        <ion-item id="side-menu21-list-item12" ui-sref="side-menu21.festivals" menu-close="" class="menu-class1">Festivals</ion-item>
-        <ion-item id="side-menu21-list-item13" ui-sref="side-menu21.dharmaSandehalu" menu-close="" class="menu-class1">Dharma Sandehalu</ion-item>
-        <ion-item id="side-menu21-list-item9" ui-sref="side-menu21.events" menu-close="" class="menu-class1">Events</ion-item>
-        <ion-item id="side-menu21-list-item8" ui-sref="side-menu21.contact" menu-close="" class="menu-class1">Reach us</ion-item>
-        <ion-item id="side-menu21-list-item15" ui-sref="side-menu21.social" menu-close="" class="menu-class1">Social</ion-item>
+        <ion-item id="side-menu21-list-item2" ui-sref="side-menu21.about" menu-close="" class="menu-class1">About</ion-item>
+        <ion-item id="side-menu21-list-item3" ui-sref="side-menu21.events" menu-close="" class="menu-class1">Events</ion-item>
+        <ion-item id="side-menu21-list-item4" ui-sref="side-menu21.Promos" menu-close="" class="menu-class1">Promos</ion-item>
+        <ion-item id="side-menu21-list-item5" ui-sref="side-menu21.Offers" menu-close="" class="menu-class1">AD Tariff Packages</ion-item>
+        <ion-item id="side-menu21-list-item6" ui-sref="side-menu21.distribution" menu-close="" class="menu-class1">Distribution Channel Numbers</ion-item>
+        <ion-item id="side-menu21-list-item11" ui-sref="side-menu21.dailyprograms" menu-close="" class="menu-class1">Daily Programs</ion-item>
+        <ion-item id="side-menu21-list-item7" ui-sref="side-menu21"  class="menu-class1 item-icon-right" ng-click="shoesub();">Data <i class="icon ion-chevron-down" style="font-size: 16px;" ng-show="one"></i><i class="icon ion-chevron-up" ng-show="two" style="font-size: 16px;"></i></ion-item>
+        <ion-item id="side-menu21-list-item15" ui-sref="side-menu21.temple" menu-close="" class="menu-class1 item-icon-right"  
+        ng-show="temple" style="margin-left: 50px!important;">
+          <p class="submenutext" >Temples</p>
+        </ion-item>
+        <ion-item id="side-menu21-list-item15" ui-sref="side-menu21.pages" menu-close="" class="menu-class1 item-icon-right" ng-show="page" style="margin-left: 50px!important;">
+          <p class="submenutext">Pages</p>
+        </ion-item>
+        <ion-item id="side-menu21-list-item15" ui-sref="side-menu21.advertise" menu-close="" class="menu-class1" 
+				  ng-show="advertise" style="margin-left: 50px!important;">
+          <p class="submenutext">Advertise</p>
+        </ion-item>
+        <ion-item id="side-menu21-list-item8" ui-sref="side-menu21"  class="menu-class1 item-icon-right" ng-click="shoesub1();">HRMS<i class="icon ion-chevron-down" style="font-size: 16px;" ng-show="three"></i><i class="icon ion-chevron-up" ng-show="four" style="font-size: 16px;"></i></ion-item>
+        <ion-item id="side-menu21-list-item15" ui-sref="side-menu21.leaves" menu-close="" class="menu-class1 item-icon-right"  
+        ng-show="leaves" style="margin-left: 50px!important;">
+          <p class="submenutext" >Leaves</p>
+        </ion-item>
+        <ion-item id="side-menu21-list-item15" ui-sref="side-menu21.holiday" menu-close="" class="menu-class1 item-icon-right"  
+        ng-show="holiday" style="margin-left: 50px!important;">
+          <p class="submenutext" >Holiday</p>
+        </ion-item>
+        <ion-item id="side-menu21-list-item15" ui-sref="side-menu21.expenseReimbursement" menu-close="" class="menu-class1 item-icon-right"  
+        ng-show="expenseReimbursement" style="margin-left: 50px!important;">
+          <p class="submenutext" >Expense Reimbursement</p>
+        </ion-item>
+        <ion-item id="side-menu21-list-item9" ui-sref="side-menu21.Sociallinks" menu-close="" class="menu-class1">Social Links</ion-item>
+        <ion-item id="side-menu21-list-item10" ui-sref="side-menu21.feedback" menu-close="" class="menu-class1">Feedback</ion-item>
+<!--        <ion-item id="side-menu21-list-item15" ui-sref="side-menu21.adminLP" menu-close="" class="menu-class1">Admin Login Page</ion-item>-->
+        
       </ion-list>
       <div class="spacer" style="width: 248px; height: 20px;"></div>
-      <h5 id="side-menu21-heading10" style="color:#254266;font-style:italic;">powered by WhizNext Technologies ®</h5>
-      <div class="spacer" style="width: 248px; height: 33px;"></div>
-      <div class="spacer" style="width: 248px; height: 33px;"></div>	
+      
     </ion-content>
+    <ion-footer-bar class = "bar bar-footer" style="background:rgba(0,0,0,1.00)!important">
+    <p class = "title">
+        <span style="color:white;font-size:xx-small; ">powered by</span>
+       <span style="color: rgb(0, 147, 221);font-size:14px">WhizNext</span><span style="color: rgb(132, 194, 37);font-size:14px"> Technologies ®</span>
+        </p>
+</ion-footer-bar>
   </ion-side-menu>
 </ion-side-menus>

@@ -5,16 +5,24 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-var mainapp = angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.directives','app.services','uiGmapgoogle-maps','googlemaps.init', 'ngCordova'])
+var mainapp = angular.module('app', ['ionic', 
+                                     'app.controllers', 
+                                     'app.routes', 
+                                     'app.directives',
+                                     'app.services',
+                                     'uiGmapgoogle-maps',
+                                     'googlemaps.init',
+                                     'ngCordova',
+                                     'youtube-embed'
+                                     ])
+ 
 
 // Global variables to be used in this file only.
-
-
 mainapp.constant('appglobals', 
                               {
-                                GCM_SENDERID: '568959423988',
+                                GCM_SENDERID: '568959423988', // what is this.. for push notifications. 
                                 CONTENT_TYPE: 'application/json; charset=utf-8',
-                                STORETOKEN_URL: 'https://whiznext-api.mybluemix.net/jjsmobile/v1/storetoken'
+                                STORETOKEN_URL: 'https://whiznextapi.mybluemix.net/tokens/v1/storeTokens'
                               }
                 )
 
@@ -22,7 +30,8 @@ mainapp.config(function($ionicConfigProvider, $sceDelegateProvider){
   $sceDelegateProvider.resourceUrlWhitelist([ 'self','*://www.youtube.com/**', '*://player.vimeo.com/video/**']);
 })
 
-mainapp.run(function($ionicPlatform, $cordovaDevice, appglobals, $http, $cordovaToast, $cordovaNetwork, $rootScope, $ionicPopup, $ionicHistory) {
+mainapp.run(function($ionicPlatform, $cordovaDevice, appglobals, $http, $cordovaToast, $cordovaNetwork, $rootScope, $ionicPopup, $ionicHistory,$ionicLoading,$global,
+			   $timeout) {
   $ionicPlatform.ready(function() 
   {
     
@@ -30,15 +39,19 @@ mainapp.run(function($ionicPlatform, $cordovaDevice, appglobals, $http, $cordova
     $rootScope.loadSchedule = false;
     $rootScope.loadFestivals = false;
    
-    if(window.Connection) 
-    {
-      if(navigator.connection.type == Connection.NONE) {
-        $rootScope.online = false;
-      }
-      else{
-        $rootScope.online = true;
-      }
-    }
+     if(window.Connection) {
+     if(navigator.connection.type == Connection.NONE) {
+       $ionicPopup.confirm({
+         title: 'No Internet Connection',
+         content: 'Sorry, no Internet connectivity detected. Please reconnect and try again.'
+       })
+       .then(function(result) {
+         if(!result) {
+           ionic.Platform.exitApp();
+         }
+             });
+           }
+         }
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
     if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
@@ -52,15 +65,15 @@ mainapp.run(function($ionicPlatform, $cordovaDevice, appglobals, $http, $cordova
 
       // App initialization code
 
-    registerDeviceIdForPushNotification(appglobals, $cordovaDevice, $http, $cordovaToast);
+//   registerDeviceIdForPushNotification(appglobals, $cordovaDevice, $http, $cordovaToast);
 
-    $rootScope.$on('$cordovaNetwork:online', function(event, networkState){
-      $rootScope.online =true;
-    });
- 
-    $rootScope.$on('$cordovaNetwork:offline', function(event, networkState){
-      $rootScope.online =false;
-    });
+   $rootScope.$on('$cordovaNetwork:online', function(event, networkState){
+     $rootScope.online =true;
+   });
+
+   $rootScope.$on('$cordovaNetwork:offline', function(event, networkState){
+     $rootScope.online =false;
+   });
 
 
 
@@ -79,9 +92,7 @@ $ionicPlatform.registerBackButtonAction(function(e)
 
 
   });
-
-
-})
+});
 
 /*
   This directive is used to disable the "drag to open" functionality of the Side-Menu
@@ -135,122 +146,68 @@ mainapp.directive('hrefInappbrowser', function() {
 });
 
 
-function registerDeviceIdForPushNotification(appglobals, $cordovaDevice, $http, $cordovaToast)
-{
-
-  //alert("Registering device ID for push notification");
-
-  var pushConfig = 
-  {
-    android: {
-      senderID: appglobals.GCM_SENDERID,
-      icon: 'ic_stat_icon',
-      iconColor: "#FF0000"
-    }
-  };
-
-  var push = window.PushNotification.init(pushConfig);
-  pushObj = push;
-
-  push.on('registration', function(data) 
-  {
-    var token = data.registrationId
-    console.log('OK: register notfy ', token);
-    //alert( 'OK: ' + token);
-
-    //alert( 'platform: ' +  $cordovaDevice.getPlatform());
-
-    var data = 
-    {
-      id: token,
-      platform: $cordovaDevice.getPlatform()
-    };
-        
-    var config = 
-    {
-      headers : {
-                 'Content-Type': appglobals.CONTENT_TYPE
-                }
-    };
-
-    
-    $http.post(appglobals.STORETOKEN_URL, data, config)
-            .success(function (data, status, headers, config) 
-            {
-              //Token saved successfully
-            })
-            .error(function (data, status, header, config) 
-            {
-                var ResponseDetails = "Data: " + data +
-                    "<hr />status: " + status +
-                    "<hr />headers: " + header +
-                    "<hr />config: " + config;
-            });
-
-  });
-
-
-  push.on('notification', function(data) {
-    $cordovaToast
-    .show(data.message, 'long', 'center')
-    .then(function(success) {
-      // success
-    }, function (error) {
-      // error
-    });
-
-
-  });
-
-  push.on('error', function(e) {
-    // e.message
-    //alert( 'An error occurred: ' + e.message);
-  });
-
-}
+//function registerDeviceIdForPushNotification(appglobals, $cordovaDevice, $http, $cordovaToast)
+//{
+// var platform = $cordovaDevice.getPlatform()
+//
+//}
 
 mainapp.factory('httpService', function($http) {
     var data = function (value) {
             return $http.get(value);
-    }
+    };
 
-    return { data: data }
+    return { data: data };
+});
+//factory for get and set methods
+mainapp.factory('$global', function() {
+  var department ={};
+	var profile = [];
+	var notifications = [];
+	var userData = [];
+	var menu = true;
+  var number ={};
+	return{
+		setprofile:function(val){
+			profile = val;
+		},
+		getprofile:function(){
+			return profile;
+		},
+		setuserData:function(val){
+			userData = val;
+		},
+		getuserData:function(){
+			return userData;
+		},
+		setdepartment:function(val){
+			department = val;
+		},
+    setNumber:function(val){
+       number = val;
+    },
+    getNumber:function(){
+      return number
+    },
+		getdepartment:function(){
+			return department;
+		},
+		setnotifications:function(val){
+			notifications = val;
+		},
+		getnotifications:function(){
+			return notifications;
+		},
+		setmenu:function(val){
+			menu = val;
+		},
+		getmenu:function(){
+			return menu;
+		}
+	};
 });
 
-mainapp.factory('globalService', function() {
-    var vid = '';
-    var cPage = 'HOME_PAGE';
-    var getVid = function () {
-            return vid;
-    }
-    var setVid = function (value) {
-            vid = value;
-    }
-    
-    var plvids = {'vids' : []};
 
-    var setplist = function (value) {
-          plvids = {'vids' : []};
-          plvids = value;
-    }
-    var getplist = function () {
-    return plvids;
-    }
-    
-    var setCPage = function(value){
-      cPage = value;
-    }
-    var getCPage = function(){
-      return cPage;
-    }
 
-   
 
-       return { getVid : getVid,
-                setVid : setVid,
-                setplist : setplist,
-                getplist : getplist,
-                getCPage : getCPage,
-                setCPage : setCPage 
-  }
-});
+

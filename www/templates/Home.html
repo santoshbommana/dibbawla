@@ -1,0 +1,59 @@
+<ion-view title="Home" id="page1" style="background-color:white;" ng-model="vis">
+  <ion-nav-buttons side="right" class="has-header">
+ 
+  </ion-nav-buttons>
+  
+  <ion-content>
+  <div class = "row" style="margin-left: 0px!important;">
+    <div class = "col col-33 home_tab" ng-click="click_tab_One()" ng-class="{'active1': isActive1}">Dine-out</div>
+    <div class = "col col-33 home_tab" ng-click="click_tab_two()" ng-class="{'active1': isActive2}">Delivery</div>
+    <div class = "col col-33 home_tab" ng-click="click_tab_three()" ng-class="{'active1': isActive3}">collections</div>
+ </div>
+ <!-- dine_list -->
+ <div class = "list" ng-show="dine_list">
+  <div ng-repeat="food in dineOutData" class = "item item-thumbnail-left">
+      <img ng-src="{{ food.img }}" />
+     <p class="my_list_title">{{food.title}}</p>
+     <h3 class="my_list_contet"> {{food.content}}</h3>
+     <p class="list_footer">
+       <span class="pull-left cost_title">{{food.cost}}<span style="font-size: 9px;"> Rs</span></span>
+       <span class="pull-right offer_title">{{food.offer}}<span style="font-size: 8px;"> %</span></span>
+      </p>
+  </div>
+</div>
+<!-- delivery_list -->
+<div class = "list" ng-show="delivery_list">
+    <div ng-repeat="food in deliveryData" class = "item item-thumbnail-left">
+        <img ng-src="{{ food.img }}" />
+       <p class="my_list_title">{{food.title}}</p>
+       <h3 class="my_list_contet"> {{food.content}}</h3>
+       <p class="list_footer">
+         <span class="pull-left cost_title">{{food.cost}}<span style="font-size: 9px;"> Rs</span></span>
+         <span class="pull-right offer_title">{{food.offer}}<span style="font-size: 8px;"> %</span></span>
+        </p>
+    </div>
+  </div>
+<!-- collections_list -->
+<div class = "list" ng-show="collections_list">
+    <div ng-repeat="food in collectionsData" class = "item item-thumbnail-left">
+        <img ng-src="{{ food.img }}" />
+       <p class="my_list_title">{{food.title}}</p>
+       <h3 class="my_list_contet"> {{food.content}}</h3>
+       <p class="list_footer">
+         <span class="pull-left cost_title">{{food.cost}}<span style="font-size: 9px;"> Rs</span></span>
+         <span class="pull-right offer_title">{{food.offer}}<span style="font-size: 8px;"> %</span></span>
+        </p>
+    </div>
+  </div>
+  </ion-content>
+<div class="bar bar-footer bar-balanced footerBar">
+        <div class = "button-bar bar-balanced">
+   <button class="button button-icon button-clear ion-home footerButton" ui-sref="side-menu21.Home({})" menu-close="" ></button>
+   <button class="button button-icon button-clear ion-android-notifications footerButton" ui-sref="side-menu21.notification" menu-close="" ></button>
+  <button class="button button-icon button-clear ion-android-settings footerButton" ui-sref="side-menu21.settings" menu-close="" ></button>
+   <button class="button button-icon button-clear ion-log-out footerButton" ng-click="logout();" ></button>
+</div> 
+        
+    </div>
+</ion-view>
+

@@ -1328,7 +1328,8 @@
   content: ""; }
 
 .ion-chevron-left:before {
-  content: ""; }
+  content: "";
+background-color:rgb(219, 34, 75)!important;}
 
 .ion-chevron-right:before {
   content: ""; }
@@ -3577,7 +3578,7 @@ cite {
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  color: #000;
+  color: white;
   font-weight: 500;
   font-family: "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
   line-height: 1.2; }
@@ -3769,7 +3770,7 @@ a.subdued {
 
 .action-sheet-title {
   padding: 16px;
-  color: #8f8f8f;
+  color: #fff;
   text-align: center;
   font-size: 13px; }
 
@@ -3810,7 +3811,7 @@ a.subdued {
   .platform-android .action-sheet .action-sheet-title {
     font-size: 14px;
     padding: 16px;
-    color: #666; }
+    color: white; }
   .platform-android .action-sheet .button.active,
   .platform-android .action-sheet .button.activated {
     background: #e8e8e8; }
@@ -3904,18 +3905,18 @@ a.subdued {
     border-color: #ddd;
     background-color: white;
     background-image: linear-gradient(0deg, #ddd, #ddd 50%, transparent 50%);
-    color: #444; }
+    color: #fff; }
     .bar.bar-light .title {
-      color: #444; }
+      color: #fff; }
     .bar.bar-light.bar-footer {
       background-image: linear-gradient(180deg, #ddd, #ddd 50%, transparent 50%); }
   .bar.bar-stable {
     border-color: #b2b2b2;
     background-color: #f8f8f8;
     background-image: linear-gradient(0deg, #b2b2b2, #b2b2b2 50%, transparent 50%);
-    color: #444; }
+    color: #fff; }
     .bar.bar-stable .title {
-      color: #444; }
+      color: #fff; }
     .bar.bar-stable.bar-footer {
       background-image: linear-gradient(180deg, #b2b2b2, #b2b2b2 50%, transparent 50%); }
   .bar.bar-positive {
@@ -3945,10 +3946,10 @@ a.subdued {
       color: #fff; }
 .footerButton{
 	border-color: white!important;
-	color: rgb(116,116,116)!important;
+	color: rgb(219, 34, 75)!important;
 }
 .footerBar{
-	border: rgb(251, 216, 2) 1px solid;
+	border: white 1px solid;
 	
 }
     .bar.bar-assertive.bar-footer {
@@ -3956,11 +3957,11 @@ a.subdued {
   .bar.bar-balanced {
     background-color: white;
     background-image: linear-gradient(0deg, #28a54c, #28a54c 50%, transparent 50%);
-    color: rgb(116,116,116); }
+    color: #fff; }
     .bar.bar-balanced .title {
-      color: rgb(116,116,116); }
+      color: #fff; }
     .bar.bar-balanced.bar-footer {
-      background-image: linear-gradient(180deg, #28a54c, #28a54c 50%, transparent 50%); }
+      background-image: linear-gradient(180deg, white, white 50%, transparent 50%); }
   .bar.bar-energized {
     border-color: #e6b500;
     background-color: #ffc900;
@@ -3969,7 +3970,7 @@ a.subdued {
     .bar.bar-energized .title {
       color: #fff; }
     .bar.bar-energized.bar-footer {
-      background-image: linear-gradient(180deg, #e6b500, #e6b500 50%, transparent 50%); }
+      background-image: linear-gradient(180deg, white, white 50%, transparent 50%); }
   .bar.bar-royal {
     border-color: #eadbaa;
     background-color: #f2e9cb;
@@ -3980,14 +3981,14 @@ a.subdued {
     .bar.bar-royal.bar-footer {
       background-image: linear-gradient(180deg, #eadbaa, #eadbaa 50%, transparent 50%); }
   .bar.bar-dark {
-    border-color: #111;
-    background-color: rgb(251, 216, 2)!important;;
+    border-color: white;
+    background-color: rgb(219, 34, 75)!important;;
     background-image: linear-gradient(0deg, #111, #111 50%, transparent 50%);
-    color: #111; }
+    color: #fff; }
     .bar.bar-dark .title {
-      color: #111; }
+      color: #fff; }
     .bar.bar-dark.bar-footer {
-      background-image: linear-gradient(180deg, #111, #111 50%, transparent 50%); }
+      background-image: linear-gradient(180deg, white, white 50%, transparent 50%); }
   .bar .title {
     display: block;
     position: absolute;
@@ -4090,9 +4091,9 @@ a.subdued {
 .bar-light .button {
   border-color: #ddd;
   background-color: white;
-  color: #444; }
+  color: #fff; }
   .bar-light .button:hover {
-    color: #444;
+    color: #fff;
     text-decoration: none; }
   .bar-light .button.active, .bar-light .button.activated {
     border-color: #ccc;
@@ -4101,7 +4102,7 @@ a.subdued {
     border-color: transparent;
     background: none;
     box-shadow: none;
-    color: #444;
+    color: #fff;
     font-size: 17px; }
   .bar-light .button.button-icon {
     border-color: transparent;
@@ -4110,9 +4111,9 @@ a.subdued {
 .bar-stable .button {
   border-color: #b2b2b2;
   background-color: #f8f8f8;
-  color: #444; }
+  color: #fff; }
   .bar-stable .button:hover {
-    color: #444;
+    color: #fff;
     text-decoration: none; }
   .bar-stable .button.active, .bar-stable .button.activated {
     border-color: #a2a2a2;
@@ -4121,7 +4122,7 @@ a.subdued {
     border-color: transparent;
     background: none;
     box-shadow: none;
-    color: #444;
+    color: #fff;
     font-size: 17px; }
   .bar-stable .button.button-icon {
     border-color: transparent;
@@ -4249,7 +4250,7 @@ a.subdued {
 
 .bar-dark .button {
   border-color: #111;
-  background-color: rgb(251, 216, 2)!important;;
+  background-color: rgb(219, 34, 75)!important;;
   color: #111; }
   .bar-dark .button:hover {
     color: #111;
@@ -9821,7 +9822,7 @@ a.button {
 	 }
   .menu-class1 .item-content {
     background: none;
-	  border:rgb(251, 216, 2) 1px solid;
+	  border:rgb(219, 34, 75) 1px solid;
 	  border-radius: 50px;
 	  padding: 5px!important;
 	  
@@ -9845,13 +9846,13 @@ border-radius: 0px;
 
 .myfooter{
   background: none;
-  background: rgb(251, 216, 2) !important;
+  background: rgb(219, 34, 75) !important;
   border: 2px solid #FFF4BC;
   color: #FFF4BC !important; }
 
 .visitatha {
   background: none;
-  background: rgb(251, 216, 2) !important;
+  background: rgb(219, 34, 75) !important;
   border-radius: 15px;
   padding: 20px; }
 

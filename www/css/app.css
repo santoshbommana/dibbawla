@@ -3,10 +3,10 @@
 
 .input{
 	border-radius: 5px!important;
-	border: rgb(251, 216, 2) 2px solid;
+	border: rgb(219, 34, 75) 2px solid;
 }
 .submenutext{
-	text-align: right;color: rgb(251, 216, 2)!important;font-size: 16px;
+	text-align: right;color: rgb(219, 34, 75)!important;font-size: 16px;
 }
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color:rgba(0,0,0,0.5)!important;
@@ -100,27 +100,76 @@ a.animated-button.victoria-two:after {
   font-weight: 300;
 }
 .socialIconfb{
-	font-size: 42px;padding: 8px 25px; border-radius: 100px;border: rgb(251, 216, 2) 1px solid;color: rgb(116,116,116);
+	font-size: 42px;padding: 8px 25px; border-radius: 100px;border: rgb(219, 34, 75) 1px solid;color: rgb(116,116,116);
 }
 .socialIconyt{
-	font-size: 42px;padding: 9px 13px; border-radius: 100px;border: rgb(251, 216, 2) 1px solid;color: rgb(116,116,116);
+	font-size: 42px;padding: 9px 13px; border-radius: 100px;border: rgb(219, 34, 75) 1px solid;color: rgb(116,116,116);
 }
 .socialIconwww{
-	font-size: 42px;padding: 9px 16px; border-radius: 100px;border: rgb(251, 216, 2) 1px solid;color: rgb(116,116,116);
+	font-size: 42px;padding: 9px 16px; border-radius: 100px;border: rgb(219, 34, 75) 1px solid;color: rgb(116,116,116);
 }
 .socialIconyupp{
-	border-radius: 100px;border: rgb(251, 216, 2) 1px solid;background: rgb(116,116,116);
+	border-radius: 100px;border: rgb(219, 34, 75) 1px solid;background: rgb(116,116,116);
 }
 .socialIconyupp:hover{
-	border-radius: 100px;border: rgb(116,116,116) 1px solid;background: rgb(251, 216, 2);
+	border-radius: 100px;border: rgb(116,116,116) 1px solid;background: rgb(219, 34, 75);
 }
 .imageUpload{
-	font-size: 36px;padding: 0px 6px; border-radius: 100px;border: rgb(251, 216, 2) 1px solid;color: rgb(116,116,116);
-	background: rgb(251, 216, 2);
+	font-size: 36px;padding: 0px 6px; border-radius: 100px;border: rgb(219, 34, 75) 1px solid;color: rgb(116,116,116);
+	background: rgb(219, 34, 75);
 }
 .imageUpload:hover{
 	border: rgb(116,116,116) 1px solid;color: rgb(116,116,116);background:white;
 }
 .socialIconfb:hover, .socialIconyt:hover, .socialIconwww:hover{
-	border: rgb(116,116,116) 1px solid;color: rgb(251, 216, 2);
+	border: rgb(116,116,116) 1px solid;color: rgb(219, 34, 75);
 }
+.myicon{
+	background-color:rgb(219, 34, 75) !important;
+	color:white!important;
+}
+.title {
+	color:white!important;
+}
+.home_tab{
+	color: rgb(232, 121, 68);
+	cursor: pointer;
+	border-bottom: rgb(232, 121, 68) 1px solid;
+	text-align: center!important;
+
+}
+.active1 {
+	color: rgb(219, 34, 75);
+	font-weight: 900;
+	border-bottom: rgb(219, 34, 75) 3px solid;
+  }
+  .my_list_title{
+	  color: black;
+	  font-weight: 900;
+	  font-size: 16px;
+  }
+  .my_list_contet{
+	color:rgb(77, 76, 76);
+	font-size: 12px;
+	word-break: keep-all;
+	word-wrap: normal;
+  }
+  .cost_title{
+	  background:rgb(219, 34, 75);
+	  color: white;
+	  font-weight: 900; 
+	  height: 25px;
+	  padding: 2px;
+  }
+  .offer_title{
+	background:rgb(32, 5, 150);
+	color: white;
+	font-weight: 900; 
+	height: 25px;
+	padding: 2px;
+	border-radius: 10%;
+  }
+  .list_footer{
+	  margin-top: 10px;
+  }
+  

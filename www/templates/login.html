@@ -2,64 +2,64 @@
   <ion-content padding="true"  style="margin-top: 38px!important;">
   	<div align="center" >
   	<div ng-show="one">
-  		<div class = "bar bar-header" style="background-color:rgb(251, 216, 2)!important;padding-bottom: 30px!important">
-   <h2 class = "title">LOGIN WITH PHONE</h2>
+  		<div class = "bar bar-header" style="background-color:rgb(219, 34, 75)!important;padding-bottom: 30px!important">
+   <h1 class = "title">LOGIN WITH PHONE</h1>
 </div>
   	<form style="margin-top: 150px">
 <!--  <button class="w3-btn w3-white w3-border w3-border-black w3-round-large" style="background-color:rgb(66, 103, 178)!important;border-color: white!important; color: white!important;padding: 8px 15px;;border-radius: 50px!important;" ><i class="icon ion-social-facebook" style="font-size: 18px;padding-right: 10px!important;"></i> Login With Facebook</button><br><br>-->
   <div style="margin-top: 100px;">
 <!--  	<button class="w3-btn w3-white w3-border w3-border-black w3-round-large" style="border-color: rgb(66, 103, 178)!important; color: black;padding: 8px 15px;;border-radius: 50px!important;"><i class="icon ion-social-google" style="font-size: 18px;padding-right: 10px!important;"></i> Google</button>-->
-<button class="w3-btn w3-white w3-border w3-border-black w3-round-large" style="border-color: rgb(66, 103, 178)!important; color: black;padding: 8px 15px;border-radius: 50px!important;" ng-click="pnone()" ><i class="icon ion-android-call" style="font-size: 18px;padding-right: 10px!important;"></i> Phone Login </button>
+<button class="w3-btn w3-white w3-border w3-border-black w3-round-large" style="border-color: rgb(219, 34, 75) !important; color: black;padding: 8px 15px;border-radius: 50px!important;" ng-click="pnone()" ><i class="icon ion-android-call" style="font-size: 18px;padding-right: 10px!important;"></i> Phone Login </button>
   	
   </div>
 </form>
   	</div>
   	<div ng-show="two" >
-  	<div class = "bar bar-header" style="background-color:rgb(251, 216, 2)!important;">
-  	<button class = "button icon ion-chevron-left" ng-click="pnone()"></button>
+  	<div class = "bar bar-header" style="background-color:rgb(219, 34, 75)!important;">
+  	<button class = "button icon myicon ion-chevron-left" ng-click="pnone()"></button>
    <h1 class = "title"> Phone Login </h1>
 </div>
  	<div>
    <form style="margin-top: 50px;">
    	
-   <input class="w3-input w3-animate-input" type="number" style="width:80%;border-bottom:rgb(251, 216, 2) 1px solid;" placeholder="Mobile Number" ng-model="login.number" maxlength="10" ng-change="phoneNumberLength()" pattern="[7896][0-9]{9}"><br>
-   <input class="w3-input w3-animate-input" type="text" style="width:80%;border-bottom:rgb(251, 216, 2) 1px solid;" placeholder="Name" ng-model="login.name"><br>
-   <button class="w3-btn w3-white w3-border w3-border-black w3-round-large" style="background-color:rgb(251, 216, 2)!important; border-color: white!important; color: white!important;padding: 8px;border-radius: 50px!important;" ng-click="continueotp();timmer();" ng-disabled="ContinueButton"> Continue</button>
+   <input class="w3-input w3-animate-input" type="number" style="width:80%;border-bottom:rgb(219, 34, 75) 1px solid;" placeholder="Mobile Number" ng-model="login.number" maxlength="10" ng-change="phoneNumberLength()" pattern="[7896][0-9]{9}"><br>
+   <input class="w3-input w3-animate-input" type="text" style="width:80%;border-bottom:rgb(219, 34, 75) 1px solid;" placeholder="Name" ng-model="login.name"><br>
+   <button class="w3-btn w3-white w3-border w3-border-black w3-round-large" style="background-color:rgb(219, 34, 75)!important; border-color: white!important; color: white!important;padding: 8px;border-radius: 50px!important;" ng-click="continueotp();timmer();" ng-disabled="ContinueButton"> Continue</button>
    </form>
    </div>
   	</div>
   	<div ng-show="three" >
-  	<div class = "bar bar-header" style="background-color:rgb(251, 216, 2)!important;">
-  	<button class = "button icon ion-chevron-left" ng-click="continueotpBack();timmer1();"></button>
+  	<div class = "bar bar-header" style="background-color:rgb(219, 34, 75)!important;">
+  	<button class = "button icon myicon ion-chevron-left" ng-click="continueotpBack();timmer1();"></button>
    <h1 class = "title">Enter OTP</h1>
 </div>
  	<div>
    <form style="margin-top: 50px;">
    	<h3>OTP sent to :{{login.number}}</h3>
    	<p style="color: red;">{{otpError}}</p>
-   <input class="w3-input w3-animate-input" type="text" style="width:80%;border-bottom:rgb(251, 216, 2) 1px solid;" placeholder=" 4 digit OTP number" ng-model="login.otpnumber" ng-change="enableButtton();" maxlength="4"><br>
-   <button class="w3-btn w3-white w3-border w3-border-black w3-round-large" style="background-color:rgb(251, 216, 2)!important; border-color: white!important; color: white!important;padding: 8px;border-radius: 50px!important;" ng-disabled="value" 
+   <input class="w3-input w3-animate-input" type="text" style="width:80%;border-bottom:rgb(219, 34, 75) 1px solid;" placeholder=" 4 digit OTP number" ng-model="login.otpnumber" ng-change="enableButtton();" maxlength="4"><br>
+   <button class="w3-btn w3-white w3-border w3-border-black w3-round-large" style="background-color:rgb(219, 34, 75)!important; border-color: white!important; color: white!important;padding: 8px;border-radius: 50px!important;" ng-disabled="value" 
    ng-click="otpValidate()"> Confirm</button>
-   <button class="w3-btn w3-white w3-border w3-border-black w3-round-large" style="background-color:rgb(251, 216, 2)!important; border-color: white!important; color: white!important;padding: 8px;border-radius: 50px!important;" ng-show="resendOTPButton" ng-disabled="isDisabled" ng-click="reSendOTP();timmer();">Resend OTP </button><span ng-show="otptime"><b> {{counter | secondsToDateTime | date:'mm:ss'}}</b></span>
+   <button class="w3-btn w3-white w3-border w3-border-black w3-round-large" style="background-color:rgb(219, 34, 75)!important; border-color: white!important; color: white!important;padding: 8px;border-radius: 50px!important;" ng-show="resendOTPButton" ng-disabled="isDisabled" ng-click="reSendOTP();timmer();">Resend OTP </button><span ng-show="otptime"><b> {{counter | secondsToDateTime | date:'mm:ss'}}</b></span>
    </form>
    </div>
   	</div>
   	<div ng-show="four" >
-  	<div class = "bar bar-header" style="background-color:rgb(251, 216, 2)!important;">
+  	<div class = "bar bar-header" style="background-color:rgb(219, 34, 75)!important;">
 <!--  	<button class = "button icon ion-chevron-left" ng-click="passCode()"></button>-->
    <h1 class = "title">PassCode</h1>
 </div>
  	<div >
    <form style="margin-top: 50px;">
-   <input class="w3-input w3-animate-input" type="password" style="width:50%;border-bottom:rgb(251, 216, 2) 1px solid;" placeholder=" 4 digit PassCode" ng-model="login.passCode"  maxlength="4"><br>
-   <input class="w3-input w3-animate-input" type="password" style="width:50%;border-bottom:rgb(251, 216, 2) 1px solid;" placeholder=" Re-enter 4 digit PassCode" ng-model="login.rePassCode" ng-change="confirmPassCode();" maxlength="4"><br>
-   <button class="w3-btn w3-white w3-border w3-border-black w3-round-large" style="background-color:rgb(251, 216, 2)!important; border-color: white!important; color: white!important;padding: 8px;border-radius: 50px!important;" ng-disabled="value1" 
+   <input class="w3-input w3-animate-input" type="password" style="width:50%;border-bottom:rgb(219, 34, 75) 1px solid;" placeholder=" 4 digit PassCode" ng-model="login.passCode"  maxlength="4"><br>
+   <input class="w3-input w3-animate-input" type="password" style="width:50%;border-bottom:rgb(219, 34, 75) 1px solid;" placeholder=" Re-enter 4 digit PassCode" ng-model="login.rePassCode" ng-change="confirmPassCode();" maxlength="4"><br>
+   <button class="w3-btn w3-white w3-border w3-border-black w3-round-large" style="background-color:rgb(219, 34, 75)!important; border-color: white!important; color: white!important;padding: 8px;border-radius: 50px!important;" ng-disabled="value1" 
    ng-click="passCodeSave()"> Submit</button>
    </form>
    </div>
   	</div>
   	<div ng-show="five">
-  	<div class = "bar bar-header" style="background-color:rgb(251, 216, 2)!important;">
+  	<div class = "bar bar-header" style="background-color:rgb(219, 34, 75)!important;">
    <h1 class = "title">Approval Status</h1>
 </div>
  	<div style="margin-top: 150px;">
@@ -67,39 +67,39 @@
    </div>
   	</div>
   	<div ng-show="six">
-  	<div class = "bar bar-header" style="background-color:rgb(251, 216, 2)!important;">
+  	<div class = "bar bar-header" style="background-color:rgb(219, 34, 75)!important;">
    <h1 class = "title">Login With Pin</h1>
 </div>
  	<div style="margin-top: 100px;">
    <form>
    <p style="color: red;">{{passCodeError}}</p>
-   <input class="w3-input w3-animate-input" type="password" style="width:50%;border-bottom:rgb(251, 216, 2) 1px solid;" placeholder=" 4 digit PassCode" ng-model="login.passPin"  maxlength="4"><br>
+   <input class="w3-input w3-animate-input" type="password" style="width:50%;border-bottom:rgb(219, 34, 75) 1px solid;" placeholder=" 4 digit PassCode" ng-model="login.passPin"  maxlength="4"><br>
    <button class="w3-btn w3-white w3-border w3-border-black w3-round-large" style="border-color: rgb(66, 103, 178)!important; color: black;padding: 8px 15px;border-radius: 50px!important;" ng-click="loginSuccess()" >Login</button><br><br>
    <div align="center"><a ng-click="forgotPin()" ><u>Forgot Pin ?</u></a></div>
    </form>
    </div>
   	</div>
   	<div ng-show="seven">
-  	<div class = "bar bar-header" style="background-color:rgb(251, 216, 2)!important;">
+  	<div class = "bar bar-header" style="background-color:rgb(219, 34, 75)!important;">
    <h1 class = "title">Change Pin</h1>
 </div>
  	<div style="margin-top: 100px;">
    <form>
    <p style="color: red;">{{phoneNumberError}}</p>
-   <input class="w3-input w3-animate-input" type="text" style="width:50%;border-bottom:rgb(251, 216, 2) 1px solid;" placeholder="enter phone number" ng-model="login.phoneNumber"  maxlength="10" ng-change="phoneNumberLength()" pattern="[789][0-9]{9}"><br>
+   <input class="w3-input w3-animate-input" type="text" style="width:50%;border-bottom:rgb(219, 34, 75) 1px solid;" placeholder="enter phone number" ng-model="login.phoneNumber"  maxlength="10" ng-change="phoneNumberLength()" pattern="[789][0-9]{9}"><br>
    <button class="w3-btn w3-white w3-border w3-border-black w3-round-large" style="border-color: rgb(66, 103, 178)!important; color: black;padding: 8px 15px;border-radius: 50px!important;" ng-click="phoneNumberValidation()" >Continue</button>
    </form>
    </div>
   	</div>
   	<div ng-show="eight">
-  	<div class = "bar bar-header" style="background-color:rgb(251, 216, 2)!important;">
+  	<div class = "bar bar-header" style="background-color:rgb(219, 34, 75)!important;">
    <h1 class = "title">Change Pin</h1>
 </div>
  	<div style="margin-top: 100px;">
    <form>
    <p style="color: red;">{{changePinError}}</p>
-   <input class="w3-input w3-animate-input" type="password" style="width:50%;border-bottom:rgb(251, 216, 2) 1px solid;" placeholder=" 4 digit PassCode" ng-model="login.newPassPin"  maxlength="4"><br>
-   <input class="w3-input w3-animate-input" type="password" style="width:50%;border-bottom:rgb(251, 216, 2) 1px solid;" placeholder=" 4 digit PassCode" ng-model="login.reEnternewPassPin"  maxlength="4" ng-change ="changePinValidation();"><br>
+   <input class="w3-input w3-animate-input" type="password" style="width:50%;border-bottom:rgb(219, 34, 75) 1px solid;" placeholder=" 4 digit PassCode" ng-model="login.newPassPin"  maxlength="4"><br>
+   <input class="w3-input w3-animate-input" type="password" style="width:50%;border-bottom:rgb(219, 34, 75) 1px solid;" placeholder=" 4 digit PassCode" ng-model="login.reEnternewPassPin"  maxlength="4" ng-change ="changePinValidation();"><br>
    <button class="w3-btn w3-white w3-border w3-border-black w3-round-large" style="border-color: rgb(66, 103, 178)!important; color: black;padding: 8px 15px;border-radius: 50px!important;" ng-click="changePin()" ng-disabled="changePinButton" >Submit</button>
    </form>
    </div>

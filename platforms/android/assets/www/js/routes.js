@@ -30,7 +30,7 @@ angular.module('app.routes', ['ngSanitize','ionic'])
   })
 
 .state('side-menu21.adminLP', {
-    url: '/page4',
+    url: '/page2',
     views: {
       'side-menu21': {
         templateUrl: 'templates/adminLoginPage.html',
@@ -38,7 +38,7 @@ angular.module('app.routes', ['ngSanitize','ionic'])
       }
     }
   }).state('side-menu21.about', {
-    url: '/page9',
+    url: '/page3',
     views: {
       'side-menu21': {
         templateUrl: 'templates/about.html',
@@ -46,7 +46,7 @@ angular.module('app.routes', ['ngSanitize','ionic'])
       }
     }
   }).state('side-menu21.login', {
-    url: '/page13',
+    url: '/page4',
     views: {
       'side-menu21': {
         templateUrl: 'templates/login.html',
@@ -54,16 +54,32 @@ angular.module('app.routes', ['ngSanitize','ionic'])
       }
     }
   }).state('side-menu21.logout', {
-    url: '/page19',
+    url: '/page5',
     views: {
       'side-menu21': {
         templateUrl: 'templates/logout.html',
         controller: 'logoutCtrl'
       }
     }
+  }).state('side-menu21.dineOutPage', {
+    url: '/page6',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/dineOutPage.html',
+        controller: 'dineOutPageCtrl'
+      }
+    }
+  }).state('side-menu21.dineOutItemPage', {
+    url: '/page6',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/dineOutItem.html',
+        controller: 'dineOutItemCtrl'
+      }
+    }
   });
 
 
-$urlRouterProvider.otherwise('/side-menu21/page13');
+$urlRouterProvider.otherwise('/side-menu21/page1');
 
 });

@@ -155,15 +155,15 @@ a.animated-button.victoria-two:after {
 	word-wrap: normal;
   }
   .cost_title{
-	  background:rgb(219, 34, 75);
-	  color: white;
+	  /* background:rgb(219, 34, 75); */
+	  color: rgb(219, 34, 75);
 	  font-weight: 900; 
 	  height: 25px;
 	  padding: 2px;
   }
   .offer_title{
-	background:rgb(32, 5, 150);
-	color: white;
+	/* background:rgb(32, 5, 150); */
+	color: rgb(32, 5, 150);
 	font-weight: 900; 
 	height: 25px;
 	padding: 2px;
@@ -172,4 +172,16 @@ a.animated-button.victoria-two:after {
   .list_footer{
 	  margin-top: 10px;
   }
+  .text{
+	background-color : rgb(56, 126, 245)!important; 
+	color: white!important;
+  }
+  ::placeholder {
+    color:white!important; 
+    opacity: 1; /* Firefox */
+}
+/* this is add for hide the previous page name */
+.back-text{
+	color:rgb(219, 34, 75)!important; 
+}
   

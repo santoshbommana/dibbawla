@@ -1,6 +1,6 @@
 <ion-view title="Home" id="page1" style="background-color:white;" ng-model="vis">
   <ion-nav-buttons side="right" class="has-header">
- 
+    <i class="button button-icon button-clear icon ion-location" ng-click="openModal();"></i>
   </ion-nav-buttons>
   
   <ion-content>
@@ -9,15 +9,30 @@
     <div class = "col col-33 home_tab" ng-click="click_tab_two()" ng-class="{'active1': isActive2}">Delivery</div>
     <div class = "col col-33 home_tab" ng-click="click_tab_three()" ng-class="{'active1': isActive3}">collections</div>
  </div>
+ <ion-slide-box auto-play='true' does-continue='true' slide-interval="3000">
+    <ion-slide>
+      <img class="custom-class" ng-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaok4SvcA1cHQf8hyrB6S9V1SWYwKBqXOQ6_kNc31oXj2Dc5L2"/>
+    </ion-slide>
+    <ion-slide>
+        <img class="custom-class" ng-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaok4SvcA1cHQf8hyrB6S9V1SWYwKBqXOQ6_kNc31oXj2Dc5L2"/>
+      </ion-slide>
+      <ion-slide>
+          <img class="custom-class" ng-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaok4SvcA1cHQf8hyrB6S9V1SWYwKBqXOQ6_kNc31oXj2Dc5L2"/>
+        </ion-slide>
+        <ion-slide>
+            <img class="custom-class" ng-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaok4SvcA1cHQf8hyrB6S9V1SWYwKBqXOQ6_kNc31oXj2Dc5L2"/>
+          </ion-slide>
+
+  </ion-slide-box>
  <!-- dine_list -->
  <div class = "list" ng-show="dine_list">
-  <div ng-repeat="food in dineOutData" class = "item item-thumbnail-left">
+  <div ng-repeat="food in dineOutData" class = "item item-thumbnail-left" ng-click="goToDineOut();">
       <img ng-src="{{ food.img }}" />
      <p class="my_list_title">{{food.title}}</p>
      <h3 class="my_list_contet"> {{food.content}}</h3>
      <p class="list_footer">
-       <span class="pull-left cost_title">{{food.cost}}<span style="font-size: 9px;"> Rs</span></span>
-       <span class="pull-right offer_title">{{food.offer}}<span style="font-size: 8px;"> %</span></span>
+       <span class="pull-left cost_title" style="float: left;">{{food.cost}}<span style="font-size: 9px;"> Rs</span></span>
+       <span class="pull-right offer_title" style="float:right;">{{food.offer}}<span style="font-size: 8px;"> % Off</span></span>
       </p>
   </div>
 </div>
@@ -28,8 +43,8 @@
        <p class="my_list_title">{{food.title}}</p>
        <h3 class="my_list_contet"> {{food.content}}</h3>
        <p class="list_footer">
-         <span class="pull-left cost_title">{{food.cost}}<span style="font-size: 9px;"> Rs</span></span>
-         <span class="pull-right offer_title">{{food.offer}}<span style="font-size: 8px;"> %</span></span>
+        <span class="pull-left cost_title" style="float: left;">{{food.cost}}<span style="font-size: 9px;"> Rs</span></span>
+        <span class="pull-right offer_title" style="float:right;">{{food.offer}}<span style="font-size: 8px;"> % Off</span></span>
         </p>
     </div>
   </div>
@@ -40,20 +55,138 @@
        <p class="my_list_title">{{food.title}}</p>
        <h3 class="my_list_contet"> {{food.content}}</h3>
        <p class="list_footer">
-         <span class="pull-left cost_title">{{food.cost}}<span style="font-size: 9px;"> Rs</span></span>
-         <span class="pull-right offer_title">{{food.offer}}<span style="font-size: 8px;"> %</span></span>
+        <span class="pull-left cost_title" style="float: left;">{{food.cost}}<span style="font-size: 9px;"> Rs</span></span>
+        <span class="pull-right offer_title" style="float:right;">{{food.offer}}<span style="font-size: 8px;"> % Off</span></span>
         </p>
     </div>
   </div>
+  <script id = "my-modal.html" type = "text/ng-template">
+  
+    <ion-modal-view >
+      <header class="bar bar-header bar-positive">
+          <input class="w3-input text" type="text" style="border-bottom:rgb(219, 34, 75) 1px solid;" placeholder="Choose Area For Lunch" ng-model="search.location" >
+        <!-- <h1 class="title">Choose Area For Lunch</h1>
+        <div class="icon ion-close-circled button button-icon button-clear" ng-click="closeModal()"></div> -->
+      </header>
+      <ion-content style="padding-top:45px!important;">
+          <ul class = "list">
+            <li class = "item item-checkbox">
+                  Checbox 1
+                  <label class = "checkbox">
+                     <input type = "radio" name = "group1" ng-model="area.location"/>
+                  </label>
+               </li>
+            
+               <li class = "item item-checkbox">
+                  Checkbox 2
+                  <label class = "checkbox">
+                     <input type = "radio" name = "group1" ng-model="area.location"/>
+                  </label>
+               </li>
+            
+               <li class = "item item-checkbox">
+                  Checkbox e
+                  <label class = "checkbox">
+                     <input type = "radio" name = "group1" ng-model="area.location"/>
+                  </label>
+               </li>
+            
+               <li class = "item item-checkbox">
+                  Checkbox 4
+                  <label class = "checkbox">
+                     <input type = "radio" name = "group1" ng-model="area.location"/>
+                  </label>
+               </li> <li class = "item item-checkbox">
+                  Checbox 1
+                  <label class = "checkbox">
+                     <input type = "radio" name = "group1" ng-model="area.location"/>
+                  </label>
+               </li>
+            
+               <li class = "item item-checkbox">
+                  Checkbox 2
+                  <label class = "checkbox">
+                     <input type = "radio" name = "group1" ng-model="area.location"/>
+                  </label>
+               </li>
+            
+               <li class = "item item-checkbox">
+                  Checkbox e
+                  <label class = "checkbox">
+                     <input type = "radio" name = "group1" ng-model="area.location"/>
+                  </label>
+               </li>
+            
+               <li class = "item item-checkbox">
+                  Checkbox 4
+                  <label class = "checkbox">
+                     <input type = "radio" name = "group1" ng-model="area.location"/>
+                  </label>
+               </li> <li class = "item item-checkbox">
+                  Checbox 1
+                  <label class = "checkbox">
+                     <input type = "radio" name = "group1" ng-model="area.location"/>
+                  </label>
+               </li>
+            
+               <li class = "item item-checkbox">
+                  Checkbox 2
+                  <label class = "checkbox">
+                     <input type = "radio" name = "group1" ng-model="area.location"/>
+                  </label>
+               </li>
+            
+               <li class = "item item-checkbox">
+                  Checkbox e
+                  <label class = "checkbox">
+                     <input type = "radio" name = "group1" ng-model="area.location"/>
+                  </label>
+               </li>
+            
+               <li class = "item item-checkbox">
+                  Checkbox 4
+                  <label class = "checkbox">
+                     <input type = "radio" name = "group1" ng-model="area.location"/>
+                  </label>
+               </li> <li class = "item item-checkbox">
+                  Checbox 1
+                  <label class = "checkbox">
+                     <input type = "radio" name = "group1" ng-model="area.location"/>
+                  </label>
+               </li>
+            
+               <li class = "item item-checkbox">
+                  Checkbox 2
+                  <label class = "checkbox">
+                     <input type = "radio" name = "group1" ng-model="area.location"/>
+                  </label>
+               </li>
+            
+               <li class = "item item-checkbox">
+                  Checkbox e
+                  <label class = "checkbox">
+                     <input type = "radio" name = "group1" ng-model="area.location"/>
+                  </label>
+               </li>
+            
+               <li class = "item item-checkbox">
+                  Checkbox 4
+                  <label class = "checkbox">
+                     <input type = "radio" name = "group1" ng-model="area.location"/>
+                  </label>
+               </li>
+           </ul>
+      </ion-content>
+      <header class="bar bar-footer bar-positive footerBar">
+          <div class="icon ion-close-circled button button-icon button-clear" ng-click="closeModal()"></div>
+          <div class="icon ion-checkmark-circled button button-icon button-clear" ng-click="closeModal()"></div>
+      </header>
+      
+    </ion-modal-view>
+
+ </script>
   </ion-content>
-<div class="bar bar-footer bar-balanced footerBar">
-        <div class = "button-bar bar-balanced">
-   <button class="button button-icon button-clear ion-home footerButton" ui-sref="side-menu21.Home({})" menu-close="" ></button>
-   <button class="button button-icon button-clear ion-android-notifications footerButton" ui-sref="side-menu21.notification" menu-close="" ></button>
-  <button class="button button-icon button-clear ion-android-settings footerButton" ui-sref="side-menu21.settings" menu-close="" ></button>
-   <button class="button button-icon button-clear ion-log-out footerButton" ng-click="logout();" ></button>
-</div> 
-        
-    </div>
+  
 </ion-view>
+
 

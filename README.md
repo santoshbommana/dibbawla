@@ -1,6 +1,2 @@
-# DibbaWala
- >>08-06-2018 start working on the project 
-
-
-
-      
+# Dibba Wala 
+  >> 20-06-2018  given static pages 

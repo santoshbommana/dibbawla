@@ -4,8 +4,24 @@
     </ion-nav-buttons>
     <ion-content>
         <!-- dine_list -->
- <div class = "list">
-        <div ng-repeat="food in dineOutData" class = "item item-thumbnail-left" ng-click="goToDineItemPage();">
+        
+  
+ <div class = "list" align="center">
+
+    <li class = "item item-toggle"  style="width: auto;height: 50px;">
+         Non-Veg 
+        <label class = "toggle toggle-assertive"  >
+            <input type="checkbox" ng-model="searchPage"
+            ng-true-value="'veg'"  ng-false-value="'Non'"  ng-change="onChange(searchPage)">
+           <div class = "track">
+              <div class = "handle"></div>
+           </div>
+          Veg
+        </label>
+       
+     </li>    
+
+        <div ng-repeat="food in filtered = (dineOutData  | filter:searchPage ) track by $index" class = "item item-thumbnail-left" ng-click="goToDineItemPage();">
             <img ng-src="{{ food.img }}" />
            <p class="my_list_title">{{food.title}}</p>
            <h3 class="my_list_contet"> {{food.content}}</h3>
@@ -26,64 +42,26 @@
               <ion-content style="padding-top:45px!important;">
                   <ul class = "list">
                     <li class = "item item-checkbox">
-                          Checbox 1
+                          veg
                           <label class = "checkbox">
-                             <input type = "checkbox" />
+                              <input type="checkbox" ng-model="searchPage.veg"
+                              ng-true-value="'veg'"  ng-change="onChange(searchPage.veg)">
+                            
                           </label>
                        </li>
                     
                        <li class = "item item-checkbox">
-                          Checkbox 2
+                          non-veg
                           <label class = "checkbox">
-                             <input type = "checkbox" />
-                          </label>
-                       </li>
-                    
-                       <li class = "item item-checkbox">
-                          Checkbox e
-                          <label class = "checkbox">
-                             <input type = "checkbox" />
-                          </label>
-                       </li>
-                    
-                       <li class = "item item-checkbox">
-                          Checkbox 4
-                          <label class = "checkbox">
-                             <input type = "checkbox" />
-                          </label>
-                       </li> <li class = "item item-checkbox">
-                          Checbox 1
-                          <label class = "checkbox">
-                             <input type = "checkbox" />
-                          </label>
-                       </li>
-                    
-                       <li class = "item item-checkbox">
-                          Checkbox 2
-                          <label class = "checkbox">
-                             <input type = "checkbox" />
-                          </label>
-                       </li>
-                    
-                       <li class = "item item-checkbox">
-                          Checkbox e
-                          <label class = "checkbox">
-                             <input type = "checkbox" />
-                          </label>
-                       </li>
-                    
-                       <li class = "item item-checkbox">
-                          Checkbox 4
-                          <label class = "checkbox">
-                             <input type = "checkbox" />
-                          </label>
-                       </li> <li class = "item item-checkbox">
-                          Checbox 1
-                          <label class = "checkbox">
-                             <input type = "checkbox" />
+                              <input type="checkbox" ng-model="searchPage.nonVeg"
+                              ng-true-value="'nonVeg'"  ng-change="onChange(searchPage.nonVeg)">
                           </label>
                        </li>
                    </ul>
+
+
+<p>Checkbox 1 value is: <b>{{checkboxModel.veg}}</b></p>
+<p>Checkbox 2 value is: <b>{{checkboxModel.nonVeg}}</b></p>
               </ion-content>
               <header class="bar bar-footer bar-positive footerBar">
                   <div class="icon ion-close-circled button button-icon button-clear" ng-click="closeModal()"></div>

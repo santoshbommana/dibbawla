@@ -1,7 +1,7 @@
 {
   "name": "DibbaWala",
   "version": "1.1.1",
-  "description": "JJS: An Ionic project",
+  "description": "Dibbawala: An Ionic project",
   "dependencies": {
     "@ionic-native/social-sharing": "^4.5.2",
     "android-versions": "^1.2.2",
@@ -9,6 +9,7 @@
     "cordova-android": "7.0.0",
     "cordova-plugin-camera": "git+https://github.com/apache/cordova-plugin-camera.git",
     "cordova-plugin-device": "~1.1.3",
+    "cordova-plugin-request-location-accuracy": "^2.2.3",
     "cordova-plugin-splashscreen": "~4.0.0",
     "cordova-plugin-statusbar": "~2.2.0",
     "cordova-plugin-whitelist": "~1.3.0",

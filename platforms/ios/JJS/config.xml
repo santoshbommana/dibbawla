@@ -48,7 +48,7 @@
     <feature name="Camera">
         <param name="ios-package" value="CDVCamera" />
     </feature>
-    <name>Dibba Wala/name>
+    <name>Dibba Wala</name>
     <description>
         An Ionic Framework and Cordova project.
     </description>

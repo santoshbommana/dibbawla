@@ -221,6 +221,7 @@ function ($scope,$stateParams,$ionicModal,$state,$rootScope) {
 	$scope.goToDineItemPage = function(){
 		$state.go("side-menu21.dineOutItemPage");
 	}
+
 	$scope.count=0;
 	$rootScope.addedItemList=[];
 	$scope.addItem = function(index){
@@ -229,13 +230,43 @@ function ($scope,$stateParams,$ionicModal,$state,$rootScope) {
 		$rootScope.addedItemList.push(itm);
 		console.log($rootScope.addedItemList);
 	}
+
+	  $scope.searchPage = "";
+	     
+		$scope.onChange = function(val){
+			console.log("Selected Filter value",val);
+			
+		}
+		 
+		
+
+
 	$scope.dineOutData = [
 		{
 			img:'img/creolespicedcornthumb_640x480.jpg',
-			title:'Creole spiced cornt',
+			title:'Creole spiced cornt veg2',
 			content:'North Indian, Chinese, South Indian, Juices',
 			cost:'100',
-			offer:'5'
+			offer:'5',
+			type:'veg'
+
+		},
+		{
+			img:'img/y4nkk1dilwvytyzu2tte.jpg',
+			title:'Amul Tiffins Corner veg',
+			content:'Tilak Road, Abids & Koti',
+			cost:'150',
+			offer:'8',
+			type:'veg'
+
+		},
+		{
+			img:'img/creolespicedcornthumb_640x480.jpg',
+			title:'Creole spiced cornt veg',
+			content:'North Indian, Chinese, South Indian, Juices',
+			cost:'300',
+			offer:'15',
+			type:'veg'
 
 		},
 		{
@@ -243,7 +274,8 @@ function ($scope,$stateParams,$ionicModal,$state,$rootScope) {
 			title:'Amul Tiffins Corner',
 			content:'Tilak Road, Abids & Koti',
 			cost:'150',
-			offer:'8'
+			offer:'8',
+			type:'Non'
 
 		},
 		{
@@ -251,23 +283,8 @@ function ($scope,$stateParams,$ionicModal,$state,$rootScope) {
 			title:'Creole spiced cornt',
 			content:'North Indian, Chinese, South Indian, Juices',
 			cost:'300',
-			offer:'15'
-
-		},
-		{
-			img:'img/y4nkk1dilwvytyzu2tte.jpg',
-			title:'Amul Tiffins Corner',
-			content:'Tilak Road, Abids & Koti',
-			cost:'150',
-			offer:'8'
-
-		},
-		{
-			img:'img/creolespicedcornthumb_640x480.jpg',
-			title:'Creole spiced cornt',
-			content:'North Indian, Chinese, South Indian, Juices',
-			cost:'300',
-			offer:'15'
+			offer:'15',
+			type:'Non'
 
 		}
 	];

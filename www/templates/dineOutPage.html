@@ -4,6 +4,12 @@
     </ion-nav-buttons>
     <ion-content>
         <!-- dine_list -->
+
+ <div class = "list">
+        <!-- <div ng-repeat="food in dineOutData" class = "item item-thumbnail-left" ng-click="goToDineItemPage();" ng-init="add[$index] = true"> -->
+          <div ng-repeat="food in dineOutData" class = "item item-thumbnail-left" ng-init="add[$index] = true;added[$index]=false;">
+          <img ng-src="{{ food.img }}" />
+
         
   
  <div class = "list" align="center">
@@ -23,14 +29,18 @@
 
         <div ng-repeat="food in filtered = (dineOutData  | filter:searchPage ) track by $index" class = "item item-thumbnail-left" ng-click="goToDineItemPage();">
             <img ng-src="{{ food.img }}" />
+
            <p class="my_list_title">{{food.title}}</p>
            <h3 class="my_list_contet"> {{food.content}}</h3>
-           <p class="list_footer">
+           <p class="list_footer centermy">
              <span class="pull-left cost_title" style="float: left;">{{food.cost}}<span style="font-size: 9px;"> Rs</span></span>
-             <span class="pull-right offer_title" style="float:right;">{{food.offer}}<span style="font-size: 8px;"> % Off</span></span>
+             <span class="pull-right offer_title">{{food.offer}}<span style="font-size: 8px;"> % Off</span></span>
+             <span class="pull-right offer_title" style="float:right;" ng-show="add[$index]" ng-click="add[$index] = false;added[$index]=true;addItem($index);">Add</span>
+             <span class="icon ion-checkmark-circled addedToCartIcon" style="float:right;" ng-show="added[$index]"></span>
             </p>
         </div>
       </div>
+      
         <!-- filter model -->
         <script id = "filterModel.html" type = "text/ng-template">
             <ion-modal-view >
@@ -73,4 +83,8 @@
          </script>
     </ion-content>
 
+    <div class = "bar bar-footer btncontinue" ng-click="goToDineItemPage();" >
+      <h1 class = "title">Cart Items ({{count}})</h1>
+   </div>
     </ion-view>
+    

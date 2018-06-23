@@ -216,11 +216,21 @@ angular.module('app.controllers', [])
 		// }
 
 	}
-]).controller('dineOutPageCtrl', ['$scope','$stateParams','$ionicModal','$state',
-function ($scope,$stateParams,$ionicModal,$state) {
+]).controller('dineOutPageCtrl', ['$scope','$stateParams','$ionicModal','$state','$rootScope',
+function ($scope,$stateParams,$ionicModal,$state,$rootScope) {
 	$scope.goToDineItemPage = function(){
 		$state.go("side-menu21.dineOutItemPage");
 	}
+
+	$scope.count=0;
+	$rootScope.addedItemList=[];
+	$scope.addItem = function(index){
+		$scope.count++;
+		var itm = $scope.dineOutData[index];
+		$rootScope.addedItemList.push(itm);
+		console.log($rootScope.addedItemList);
+	}
+
 	  $scope.searchPage = "";
 	     
 		$scope.onChange = function(val){
@@ -229,6 +239,7 @@ function ($scope,$stateParams,$ionicModal,$state) {
 		}
 		 
 		
+
 
 	$scope.dineOutData = [
 		{
@@ -298,11 +309,11 @@ function ($scope,$stateParams,$ionicModal,$state) {
 }
 ])
 .controller('dineOutItemCtrl', ['$scope',
-	'$stateParams',
+	'$stateParams','$rootScope',
 	function ($scope,
-		$stateParams) {
+		$stateParams,$rootScope) {
 
-
+console.log($rootScope.addedItemList);
 
 	}
 ])

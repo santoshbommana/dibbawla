@@ -17,7 +17,7 @@
        under the License.
  */
 
-package  io.cordova.JTeam;
+package  io.cordova.DWala;
 
 import android.os.Bundle;
 import org.apache.cordova.*;

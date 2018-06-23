@@ -216,18 +216,57 @@ angular.module('app.controllers', [])
 		// }
 
 	}
-]).controller('dineOutPageCtrl', ['$scope','$stateParams','$ionicModal','$state',
-function ($scope,$stateParams,$ionicModal,$state) {
+]).controller('dineOutPageCtrl', ['$scope','$stateParams','$ionicModal','$state','$rootScope',
+function ($scope,$stateParams,$ionicModal,$state,$rootScope) {
 	$scope.goToDineItemPage = function(){
 		$state.go("side-menu21.dineOutItemPage");
 	}
+
+	$scope.count=0;
+	$rootScope.addedItemList=[];
+	$scope.addItem = function(index){
+		$scope.count++;
+		var itm = $scope.dineOutData[index];
+		$rootScope.addedItemList.push(itm);
+		console.log($rootScope.addedItemList);
+	}
+
+	  $scope.searchPage = "";
+	     
+		$scope.onChange = function(val){
+			console.log("Selected Filter value",val);
+			
+		}
+		 
+		
+
+
 	$scope.dineOutData = [
 		{
 			img:'img/creolespicedcornthumb_640x480.jpg',
-			title:'Creole spiced cornt',
+			title:'Creole spiced cornt veg2',
 			content:'North Indian, Chinese, South Indian, Juices',
 			cost:'100',
-			offer:'5'
+			offer:'5',
+			type:'veg'
+
+		},
+		{
+			img:'img/y4nkk1dilwvytyzu2tte.jpg',
+			title:'Amul Tiffins Corner veg',
+			content:'Tilak Road, Abids & Koti',
+			cost:'150',
+			offer:'8',
+			type:'veg'
+
+		},
+		{
+			img:'img/creolespicedcornthumb_640x480.jpg',
+			title:'Creole spiced cornt veg',
+			content:'North Indian, Chinese, South Indian, Juices',
+			cost:'300',
+			offer:'15',
+			type:'veg'
 
 		},
 		{
@@ -235,7 +274,8 @@ function ($scope,$stateParams,$ionicModal,$state) {
 			title:'Amul Tiffins Corner',
 			content:'Tilak Road, Abids & Koti',
 			cost:'150',
-			offer:'8'
+			offer:'8',
+			type:'Non'
 
 		},
 		{
@@ -243,23 +283,8 @@ function ($scope,$stateParams,$ionicModal,$state) {
 			title:'Creole spiced cornt',
 			content:'North Indian, Chinese, South Indian, Juices',
 			cost:'300',
-			offer:'15'
-
-		},
-		{
-			img:'img/y4nkk1dilwvytyzu2tte.jpg',
-			title:'Amul Tiffins Corner',
-			content:'Tilak Road, Abids & Koti',
-			cost:'150',
-			offer:'8'
-
-		},
-		{
-			img:'img/creolespicedcornthumb_640x480.jpg',
-			title:'Creole spiced cornt',
-			content:'North Indian, Chinese, South Indian, Juices',
-			cost:'300',
-			offer:'15'
+			offer:'15',
+			type:'Non'
 
 		}
 	];
@@ -284,11 +309,11 @@ function ($scope,$stateParams,$ionicModal,$state) {
 }
 ])
 .controller('dineOutItemCtrl', ['$scope',
-	'$stateParams',
+	'$stateParams','$rootScope',
 	function ($scope,
-		$stateParams) {
+		$stateParams,$rootScope) {
 
-
+console.log($rootScope.addedItemList);
 
 	}
 ])

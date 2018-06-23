@@ -4,30 +4,24 @@
     </ion-nav-buttons>
     <ion-content>
         <!-- dine_list -->
-
- <div class = "list">
         <!-- <div ng-repeat="food in dineOutData" class = "item item-thumbnail-left" ng-click="goToDineItemPage();" ng-init="add[$index] = true"> -->
-          <div ng-repeat="food in dineOutData" class = "item item-thumbnail-left" ng-init="add[$index] = true;added[$index]=false;">
-          <img ng-src="{{ food.img }}" />
+         
 
-        
-  
- <div class = "list" align="center">
 
-    <li class = "item item-toggle"  style="width: auto;height: 50px;">
-         Non-Veg 
-        <label class = "toggle toggle-assertive"  >
+    <li class = "item item-toggle bar"  style="width: auto;height: 50px;">
+         <span>Non-Veg </span>
+        <label class = "toggle toggle-assertive" style="margin-right: 36%;">
             <input type="checkbox" ng-model="searchPage"
             ng-true-value="'veg'"  ng-false-value="'Non'"  ng-change="onChange(searchPage)">
            <div class = "track">
               <div class = "handle"></div>
            </div>
-          Veg
+         
         </label>
-       
+        <span style="float:  right;margin-right: -30%;">Veg</span>
      </li>    
-
-        <div ng-repeat="food in filtered = (dineOutData  | filter:searchPage ) track by $index" class = "item item-thumbnail-left" ng-click="goToDineItemPage();">
+     <!-- <div ng-repeat="food in dineOutData" class = "item item-thumbnail-left" > -->
+        <div ng-repeat="food in filtered = (dineOutData  | filter:searchPage ) track by $index" class = "item item-thumbnail-left" ng-init="add[$index] = true;added[$index]=false;">
             <img ng-src="{{ food.img }}" />
 
            <p class="my_list_title">{{food.title}}</p>
@@ -39,7 +33,7 @@
              <span class="icon ion-checkmark-circled addedToCartIcon" style="float:right;" ng-show="added[$index]"></span>
             </p>
         </div>
-      </div>
+    
       
         <!-- filter model -->
         <script id = "filterModel.html" type = "text/ng-template">
@@ -54,8 +48,8 @@
                     <li class = "item item-checkbox">
                           veg
                           <label class = "checkbox">
-                              <input type="checkbox" ng-model="searchPage.veg"
-                              ng-true-value="'veg'"  ng-change="onChange(searchPage.veg)">
+                              <input type="checkbox" ng-model="searchPage"
+                              ng-true-value="'veg'" >
                             
                           </label>
                        </li>
@@ -63,26 +57,23 @@
                        <li class = "item item-checkbox">
                           non-veg
                           <label class = "checkbox">
-                              <input type="checkbox" ng-model="searchPage.nonVeg"
-                              ng-true-value="'nonVeg'"  ng-change="onChange(searchPage.nonVeg)">
+                              <input type="checkbox" ng-model="searchPage"
+                              ng-true-value="'nonVeg'"  >
                           </label>
                        </li>
                    </ul>
-
-
-<p>Checkbox 1 value is: <b>{{checkboxModel.veg}}</b></p>
-<p>Checkbox 2 value is: <b>{{checkboxModel.nonVeg}}</b></p>
-              </ion-content>
+                  </ion-content>
               <header class="bar bar-footer bar-positive footerBar">
                   <div class="icon ion-close-circled button button-icon button-clear" ng-click="closeModal()"></div>
-                  <div class="icon ion-checkmark-circled button button-icon button-clear" ng-click="closeModal()"></div>
+                  <div class="icon ion-checkmark-circled button button-icon button-clear" ng-click="closeModal();onChange(searchPage)"></div>
               </header>
               
             </ion-modal-view>
         
          </script>
+         
     </ion-content>
-
+    
     <div class = "bar bar-footer btncontinue" ng-click="goToDineItemPage();" >
       <h1 class = "title">Cart Items ({{count}})</h1>
    </div>

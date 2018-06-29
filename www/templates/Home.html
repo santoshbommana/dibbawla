@@ -51,7 +51,7 @@
   </div>
 <!-- collections_list -->
 <div class = "list" ng-show="collections_list">
-    <div ng-repeat="food in collectionsData" class = "item item-thumbnail-left">
+    <div ng-repeat="food in filtered = (collectionsData  | filter:searchPage ) track by $index" class = "item item-thumbnail-left">
         <img ng-src="{{ food.img }}" />
        <p class="my_list_title">{{food.title}}</p>
        <h3 class="my_list_contet"> {{food.content}}</h3>
@@ -81,7 +81,7 @@
                <li class = "item item-checkbox">
                  Vizag
                   <label class = "checkbox">
-                     <input type = "radio" name = "group1" ng-model="searchPage" value="vizags" ng-click="onChangeRadioLocation(searchPage)"/>
+                     <input type = "radio" name = "group1" ng-model="searchPage" value="vizag" ng-click="onChangeRadioLocation(searchPage)"/>
                   </label>
                </li>
             

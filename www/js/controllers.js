@@ -1,407 +1,418 @@
 angular.module('app.controllers', [])
 
-.controller('homeCtrl', ['$scope',
-	'$state',
-	'$filter',
-	'$http',
-	'$ionicModal',
-	'$timeout',
-	'$ionicLoading',
-	'httpService',
-	'$rootScope',
-	'$cordovaToast',
-	'$ionicPlatform',
-	'$state',
-	'$global',
-	'$ionicHistory',
-	'$ionicSlideBoxDelegate',
-	'$ionicSideMenuDelegate',
-	function ($scope,
-		$state,
-		$filter,
-		$http,
-		$ionicModal,
-		$timeout,
-		$ionicLoading,
-		httpService,
-		$rootScope,
-		$cordovaToast,
-		$ionicPlatform,
-		$state,
-		$global,
-		$ionicHistory,
-		$ionicSlideBoxDelegate,
-		$ionicSideMenuDelegate
-	) {
-		$ionicSideMenuDelegate.canDragContent(false);
-		$scope.isActive1 = true;
-		$scope.isActive2= false;
-		$scope.isActive3= false;
-		$scope.dine_list = true;
-		$scope.delivery_list =false;
-		$scope.collections_list = false;
-		// home page DineOut 
-		$scope.dineOutData = [
-			{
-				img:'img/creolespicedcornthumb_640x480.jpg',
-				title:'Creole spiced cornt ',
-				content:'North Indian, Chinese, South Indian, Juices',
-				cost:'100',
-				offer:'5',
-				type:'veg',
-				location:'hyderabad'
-
-			},
-			{
-				img:'img/y4nkk1dilwvytyzu2tte.jpg',
-				title:'Amul Tiffins Corner',
-				content:'tiffins,snacks,South Indian ',
-				cost:'150',
-				offer:'8',
-				type:'veg',
-				location:'vizag'
-
-			},
-			{
-				img:'img/creolespicedcornthumb_640x480.jpg',
-				title:'Creole spiced cornt',
-				content:'North Indian, Chinese',
-				cost:'300',
-				offer:'15',
-				type:'non',
-				location:'guntur'
-
-			}
-		];
-		// home page Dlivery Data
-		$scope.deliveryData = [
-			{
-				img:'img/y4nkk1dilwvytyzu2tte.jpg',
-				title:'Amul Tiffins Corne',
-				content:'North Indian, Chinese, South Indian, Juices',
-				cost:'200',
-				offer:'15',
-				location:'vizag'
-
-			},
-			{
-				img:'img/creolespicedcornthumb_640x480.jpg',
-				title:'Creole spiced cornt',
-				content:'Tilak Road, Abids & Koti',
-				cost:'150',
-				offer:'8',
-				location:'guntur'
-
-			},
-			{
-				img:'img/y4nkk1dilwvytyzu2tte.jpg',
-				title:'Amul Tiffins Corner',
-				content:'North Indian, Chinese, South Indian, Juices',
-				cost:'350',
-				offer:'10',
-				location:'guntur'
-
-			},
-			{
-				img:'img/creolespicedcornthumb_640x480.jpg',
-				title:'Creole spiced cornt',
-				content:'Tilak Road, Abids & Koti',
-				cost:'150',
-				offer:'8',
-				location:'hyderabad'
-
-			},
-			{
-				img:'img/y4nkk1dilwvytyzu2tte.jpg',
-				title:'Amul Tiffins Corner',
-				content:'North Indian, Chinese, South Indian, Juices',
-				cost:'350',
-				offer:'10',
-				location:'guntur'
-
-			}
-		];
-		// home page Collections
-		$scope.collectionsData = [
-			{
-				img:'img/creolespicedcornthumb_640x480.jpg',
-				title:'Creole spiced cornt',
-				content:'Tilak Road, Abids & Koti',
-				cost:'150',
-				offer:'8',
-				location:'guntur'
-
-			}
-		]
-		$scope.click_tab_One = function(){
+	.controller('homeCtrl', ['$scope',
+		'$state',
+		'$filter',
+		'$http',
+		'$ionicModal',
+		'$timeout',
+		'$ionicLoading',
+		'httpService',
+		'$rootScope',
+		'$cordovaToast',
+		'$ionicPlatform',
+		'$state',
+		'$global',
+		'$ionicHistory',
+		'$ionicSlideBoxDelegate',
+		'$ionicSideMenuDelegate',
+		function ($scope,
+			$state,
+			$filter,
+			$http,
+			$ionicModal,
+			$timeout,
+			$ionicLoading,
+			httpService,
+			$rootScope,
+			$cordovaToast,
+			$ionicPlatform,
+			$state,
+			$global,
+			$ionicHistory,
+			$ionicSlideBoxDelegate,
+			$ionicSideMenuDelegate
+		) {
+			$ionicSideMenuDelegate.canDragContent(false);
 			$scope.isActive1 = true;
-			$scope.isActive2= false;
-			$scope.isActive3= false;
-			$scope.dine_list = true;
-			$scope.delivery_list =false;
-			$scope.collections_list = false;
-		}
-		$scope.click_tab_two = function(){
-			$scope.isActive2 = true;
-			$scope.isActive1= false;
-			$scope.isActive3= false;
-			$scope.dine_list = false;
-			$scope.delivery_list =true;
-			$scope.collections_list = false;
-		}
-		
-		$scope.click_tab_three = function(){
 			$scope.isActive2 = false;
-			$scope.isActive1= false;
-			$scope.isActive3= true;
-			$scope.dine_list = false;
-			$scope.delivery_list =false;
-			$scope.collections_list = true;
-		}
-		$ionicModal.fromTemplateUrl('my-modal.html', {
-			scope: $scope,
-			animation: 'slide-in-up'
-		 }).then(function(modal) {
-			$scope.modal = modal;
-		 });
-		  
-		 $scope.openModal = function() {
-			$scope.modal.show();
-		 };
-		//  setTimeout(function(){
-		// 	$scope.openModal();
-		//  },500);
-		 $scope.closeModal = function() {
-						$scope.modal.hide();
-			
-		 };
-		  
+			$scope.isActive3 = false;
+			$scope.dine_list = true;
+			$scope.delivery_list = false;
+			$scope.collections_list = false;
+			// home page DineOut 
+			$scope.dineOutData = [
+				{
+					img: 'img/creolespicedcornthumb_640x480.jpg',
+					title: 'Creole spiced cornt ',
+					content: 'North Indian, Chinese, South Indian, Juices',
+					cost: '100',
+					offer: '5',
+					type: 'veg',
+					location: 'hyderabad'
 
-		$scope.homeData = [];
-		$scope.slideChanged = function (index) {
-			$scope.slideIndex = index;
-		};
-		// $ionicHistory.nextViewOptions({
-		// 	disableBack: true
+				},
+				{
+					img: 'img/y4nkk1dilwvytyzu2tte.jpg',
+					title: 'Amul Tiffins Corner',
+					content: 'tiffins,snacks,South Indian ',
+					cost: '150',
+					offer: '8',
+					type: 'veg',
+					location: 'vizag'
 
-		// });
-		$scope.image1 = "img/2.jpg";
-		$scope.navigation = "side-menu21.Home({})"
+				},
+				{
+					img: 'img/creolespicedcornthumb_640x480.jpg',
+					title: 'Creole spiced cornt',
+					content: 'North Indian, Chinese',
+					cost: '300',
+					offer: '15',
+					type: 'non',
+					location: 'guntur'
 
-		$scope.goToDineOut = function(){
-			
-			$state.go("side-menu21.dineOutPage");
-		}
-		$scope.searchPage ='';
+				}
+			];
+			// home page Dlivery Data
+			$scope.deliveryData = [
+				{
+					img: 'img/y4nkk1dilwvytyzu2tte.jpg',
+					title: 'Amul Tiffins Corne',
+					content: 'North Indian, Chinese, South Indian, Juices',
+					cost: '200',
+					offer: '15',
+					location: 'vizag'
 
-		$scope.onChangeRadioLocation = function(loca){
-			$scope.searchPage  = loca;
-			console.log("sear hpage",$scope.searchPage);
-		}; 
-		// function getAllBased() {
+				},
+				{
+					img: 'img/creolespicedcornthumb_640x480.jpg',
+					title: 'Creole spiced cornt',
+					content: 'Tilak Road, Abids & Koti',
+					cost: '150',
+					offer: '8',
+					location: 'guntur'
 
-		// 	$ionicLoading.show({
-		// 		content: 'Loading Data',
-		// 		animation: 'fade-in',
-		// 		showBackdrop: false,
-		// 		maxWidth: 200,
-		// 		showDelay: 500
-		// 	});
-		// 	//http call for all homeData
-		// 	var URL = '';
-		// 	var config = {
-		// 		headers: {
-		// 			'Content-Type': 'application/json; charset=utf-8'
-		// 		},
+				},
+				{
+					img: 'img/y4nkk1dilwvytyzu2tte.jpg',
+					title: 'Amul Tiffins Corner',
+					content: 'North Indian, Chinese, South Indian, Juices',
+					cost: '350',
+					offer: '10',
+					location: 'guntur'
 
-		// 	};
-		// 	$http.get(URL, config)
-		// 		.success(function (data, status, headers, config) {
-		// 			$scope.homeData = data;
-		// 			$ionicLoading.hide();
-		// 			console.log("get call data ", $scope.homeData[0]);
-		// 		})
-		// 		.error(function (data, status, header, config) {
+				},
+				{
+					img: 'img/creolespicedcornthumb_640x480.jpg',
+					title: 'Creole spiced cornt',
+					content: 'Tilak Road, Abids & Koti',
+					cost: '150',
+					offer: '8',
+					location: 'hyderabad'
 
-		// 			var ResponseDetails = "Data: " + data +
-		// 				"<hr />status: " + status +
-		// 				"<hr />headers: " + header +
-		// 				"<hr />config: " + config;
-		// 			console.log("Failed to save document under Remibursement DB. " + ResponseDetails);
-		// 			//$location.path('/error');
-		// 			// error massage.
-		// 			$scope.errorMassage = "OOPS! Check Your Interent Connection.";
+				},
+				{
+					img: 'img/y4nkk1dilwvytyzu2tte.jpg',
+					title: 'Amul Tiffins Corner',
+					content: 'North Indian, Chinese, South Indian, Juices',
+					cost: '350',
+					offer: '10',
+					location: 'guntur'
 
+				}
+			];
+			// home page Collections
+			$scope.collectionsData = [
+				{
+					img: 'img/creolespicedcornthumb_640x480.jpg',
+					title: 'Creole spiced cornt',
+					content: 'Tilak Road, Abids & Koti',
+					cost: '150',
+					offer: '8',
+					location: 'guntur'
 
-		// 		});
-		// }
-
-	}
-]).controller('dineOutPageCtrl', ['$scope','$stateParams','$ionicModal','$state','$rootScope',
-function ($scope,$stateParams,$ionicModal,$state,$rootScope) {
-	$scope.goToDineItemPage = function(){
-		$state.go("side-menu21.dineOutItemPage");
-	}
-
-	$scope.count=0;
-	$rootScope.addedItemList=[];
-	$scope.addItem = function(index){
-		$scope.count++;
-		var itm = $scope.dineOutData[index];
-		$rootScope.addedItemList.push(itm);
-		console.log($rootScope.addedItemList);
-	}
-
-	  $scope.searchPage = "";
-	     
-		$scope.onChange = function(val){
-			console.log("Selected Filter value",val);
-			
-		}
-		 
-		
-
-
-	$scope.dineOutData = [
-		{
-			img:'img/creolespicedcornthumb_640x480.jpg',
-			title:'Creole spiced cornt veg2',
-			content:'North Indian, Chinese, South Indian, Juices',
-			cost:'100',
-			offer:'5',
-			type:'veg',
-			location:'guntur'
-
-		},
-		{
-			img:'img/y4nkk1dilwvytyzu2tte.jpg',
-			title:'Amul Tiffins Corner veg',
-			content:'Tilak Road, Abids & Koti',
-			cost:'150',
-			offer:'8',
-			type:'veg',
-			location:'vizag'
-
-		},
-		{
-			img:'img/creolespicedcornthumb_640x480.jpg',
-			title:'Creole spiced cornt veg',
-			content:'North Indian, Chinese, South Indian, Juices',
-			cost:'300',
-			offer:'15',
-			type:'veg',
-			location:'guntur'
-
-		},
-		{
-			img:'img/y4nkk1dilwvytyzu2tte.jpg',
-			title:'Amul Tiffins Corner',
-			content:'Tilak Road, Abids & Koti',
-			cost:'150',
-			offer:'8',
-			type:'Non',
-			location:'vizag'
-
-		},
-		{
-			img:'img/creolespicedcornthumb_640x480.jpg',
-			title:'Creole spiced cornt',
-			content:'North Indian, Chinese, South Indian, Juices',
-			cost:'300',
-			offer:'15',
-			type:'Non',
-			location:'hyderabad'
-
-		}
-	];
-		$ionicModal.fromTemplateUrl('filterModel.html', {
-			scope: $scope,
-			animation: 'slide-in-up'
-		 }).then(function(modal) {
-			$scope.modal = modal;
-		 });
-		  
-		 $scope.openModal = function() {
-			$scope.modal.show();
-		 };
-		//  setTimeout(function(){
-		// 	$scope.openModal();
-		//  },500);
-		 $scope.closeModal = function() {
-			$scope.modal.hide();
-		 };
-
-
-}
-])
-.controller('dineOutItemCtrl', ['$scope',
-	'$stateParams','$rootScope',
-	function ($scope,
-		$stateParams,$rootScope) {
-
-console.log($rootScope.addedItemList);
-
-	}
-])
-
-.controller('side-menu21Ctrl', ['$scope',
-	'$stateParams',
-	'$rootScope',
-	'$ionicHistory',
-	'$global',
-	'$timeout',
-	'$cordovaDevice',
-	'$ionicLoading',
-	'$http',
-
-	function ($scope,
-		$stateParams,
-		$rootScope,
-		$ionicHistory,
-		$global,
-		$timeout,
-		$cordovaDevice,
-		$ionicLoading,
-		$http
-	) {
-		$scope.otp = [];
-		$scope.profileData = [];
-		$scope.one = true;
-		$scope.two = false;
-		$scope.three = true;
-		$scope.four = false;
-		$scope.profileMenu = false;
-
-		$ionicHistory.nextViewOptions({
-			disableBack: true
-		});
-		$scope.shoeProfileMenu = function () {
-			$scope.profileMenu = !$scope.profileMenu;
-		};
-		$scope.shoesub = function () {
-			$scope.temple = !$scope.temple;
-			$scope.page = !$scope.page;
-			$scope.advertise = !$scope.advertise;
-			$scope.one = !$scope.one;
-			$scope.two = !$scope.two;
-		};
-		$scope.shoesub1 = function () {
-			$scope.leaves = !$scope.leaves;
-			$scope.holiday = !$scope.holiday;
-			$scope.expenseReimbursement = !$scope.expenseReimbursement;
-			$scope.three = !$scope.three;
-			$scope.four = !$scope.four;
-		};
-		///logout call
-		$scope.logout = function () {
-			if (confirm('Are you sure you want to logout?')) {
-				ionic.Platform.exitApp();
+				}
+			]
+			$scope.click_tab_One = function () {
+				$scope.isActive1 = true;
+				$scope.isActive2 = false;
+				$scope.isActive3 = false;
+				$scope.dine_list = true;
+				$scope.delivery_list = false;
+				$scope.collections_list = false;
+			}
+			$scope.click_tab_two = function () {
+				$scope.isActive2 = true;
+				$scope.isActive1 = false;
+				$scope.isActive3 = false;
+				$scope.dine_list = false;
+				$scope.delivery_list = true;
+				$scope.collections_list = false;
 			}
 
-			return false;
-		};
-	}
-])
+			$scope.click_tab_three = function () {
+				$scope.isActive2 = false;
+				$scope.isActive1 = false;
+				$scope.isActive3 = true;
+				$scope.dine_list = false;
+				$scope.delivery_list = false;
+				$scope.collections_list = true;
+			}
+			$ionicModal.fromTemplateUrl('my-modal.html', {
+				scope: $scope,
+				animation: 'slide-in-up'
+			}).then(function (modal) {
+				$scope.modal = modal;
+			});
+
+			$scope.openModal = function () {
+				$scope.modal.show();
+			};
+			//  setTimeout(function(){
+			// 	$scope.openModal();
+			//  },500);
+			$scope.closeModal = function () {
+				$scope.modal.hide();
+
+			};
+
+
+			$scope.homeData = [];
+			$scope.slideChanged = function (index) {
+				$scope.slideIndex = index;
+			};
+			// $ionicHistory.nextViewOptions({
+			// 	disableBack: true
+
+			// });
+			$scope.image1 = "img/2.jpg";
+			$scope.navigation = "side-menu21.Home({})"
+
+			$scope.goToDineOut = function () {
+
+				$state.go("side-menu21.dineOutPage");
+			}
+			$scope.searchPage = '';
+
+			$scope.onChangeRadioLocation = function (loca) {
+				$scope.searchPage = loca;
+				console.log("sear hpage", $scope.searchPage);
+			};
+			// function getAllBased() {
+
+			// 	$ionicLoading.show({
+			// 		content: 'Loading Data',
+			// 		animation: 'fade-in',
+			// 		showBackdrop: false,
+			// 		maxWidth: 200,
+			// 		showDelay: 500
+			// 	});
+			// 	//http call for all homeData
+			// 	var URL = '';
+			// 	var config = {
+			// 		headers: {
+			// 			'Content-Type': 'application/json; charset=utf-8'
+			// 		},
+
+			// 	};
+			// 	$http.get(URL, config)
+			// 		.success(function (data, status, headers, config) {
+			// 			$scope.homeData = data;
+			// 			$ionicLoading.hide();
+			// 			console.log("get call data ", $scope.homeData[0]);
+			// 		})
+			// 		.error(function (data, status, header, config) {
+
+			// 			var ResponseDetails = "Data: " + data +
+			// 				"<hr />status: " + status +
+			// 				"<hr />headers: " + header +
+			// 				"<hr />config: " + config;
+			// 			console.log("Failed to save document under Remibursement DB. " + ResponseDetails);
+			// 			//$location.path('/error');
+			// 			// error massage.
+			// 			$scope.errorMassage = "OOPS! Check Your Interent Connection.";
+
+
+			// 		});
+			// }
+
+		}
+	]).controller('dineOutPageCtrl', ['$scope', '$stateParams', '$ionicModal', '$state', '$rootScope',
+		function ($scope, $stateParams, $ionicModal, $state, $rootScope) {
+			$scope.goToDineItemPage = function () {
+				$state.go("side-menu21.dineOutItemPage");
+			}
+
+			$scope.count = 0;
+			$rootScope.addedItemList = [];
+			$scope.addItem = function (id) {
+				
+				$scope.count++;
+				for (var i = 0; i < $scope.dineOutData.length; i++) {
+					console.log($scope.dineOutData[i]);
+					if (id === $scope.dineOutData[i].id) {
+						var itm = $scope.dineOutData[i];
+						$rootScope.addedItemList.push(itm);
+					}
+				}
+				console.log($rootScope.addedItemList);
+			}
+
+			$scope.searchPage = "";
+
+			$scope.onChange = function (val) {
+				console.log("Selected Filter value", val);
+
+			}
+
+
+
+
+			$scope.dineOutData = [
+				{
+					id: 101,
+					img: 'img/creolespicedcornthumb_640x480.jpg',
+					title: 'Creole spiced cornt veg2',
+					content: 'North Indian, Chinese, South Indian, Juices',
+					cost: 100,
+					offer: 5,
+					type: 'veg',
+					location: 'guntur'
+
+				},
+				{
+					id: 102,
+					img: 'img/y4nkk1dilwvytyzu2tte.jpg',
+					title: 'Amul Tiffins Corner veg',
+					content: 'Tilak Road, Abids & Koti',
+					cost: 150,
+					offer: 8,
+					type: 'veg',
+					location: 'vizag'
+
+				},
+				{
+					id: 103,
+					img: 'img/creolespicedcornthumb_640x480.jpg',
+					title: 'Creole spiced cornt veg',
+					content: 'North Indian, Chinese, South Indian, Juices',
+					cost: 300,
+					offer: 15,
+					type: 'veg',
+					location: 'guntur'
+
+				},
+				{
+					id: 104,
+					img: 'img/y4nkk1dilwvytyzu2tte.jpg',
+					title: 'Amul Tiffins Corner',
+					content: 'Tilak Road, Abids & Koti',
+					cost: 150,
+					offer: 8,
+					type: 'Non',
+					location: 'vizag'
+
+				},
+				{
+					id: 105,
+					img: 'img/creolespicedcornthumb_640x480.jpg',
+					title: 'Creole spiced cornt',
+					content: 'North Indian, Chinese, South Indian, Juices',
+					cost: 300,
+					offer: 15,
+					type: 'Non',
+					location: 'hyderabad'
+
+				}
+			];
+			$ionicModal.fromTemplateUrl('filterModel.html', {
+				scope: $scope,
+				animation: 'slide-in-up'
+			}).then(function (modal) {
+				$scope.modal = modal;
+			});
+
+			$scope.openModal = function () {
+				$scope.modal.show();
+			};
+			//  setTimeout(function(){
+			// 	$scope.openModal();
+			//  },500);
+			$scope.closeModal = function () {
+				$scope.modal.hide();
+			};
+
+
+		}
+	])
+	.controller('dineOutItemCtrl', ['$scope',
+		'$stateParams', '$rootScope',
+		function ($scope,
+			$stateParams, $rootScope) {
+			$scope.itesToCart = $rootScope.addedItemList;
+			console.log($rootScope.addedItemList);
+
+		}
+	])
+
+	.controller('side-menu21Ctrl', ['$scope',
+		'$stateParams',
+		'$rootScope',
+		'$ionicHistory',
+		'$global',
+		'$timeout',
+		'$cordovaDevice',
+		'$ionicLoading',
+		'$http',
+
+		function ($scope,
+			$stateParams,
+			$rootScope,
+			$ionicHistory,
+			$global,
+			$timeout,
+			$cordovaDevice,
+			$ionicLoading,
+			$http
+		) {
+			$scope.otp = [];
+			$scope.profileData = [];
+			$scope.one = true;
+			$scope.two = false;
+			$scope.three = true;
+			$scope.four = false;
+			$scope.profileMenu = false;
+
+			$ionicHistory.nextViewOptions({
+				disableBack: true
+			});
+			$scope.shoeProfileMenu = function () {
+				$scope.profileMenu = !$scope.profileMenu;
+			};
+			$scope.shoesub = function () {
+				$scope.temple = !$scope.temple;
+				$scope.page = !$scope.page;
+				$scope.advertise = !$scope.advertise;
+				$scope.one = !$scope.one;
+				$scope.two = !$scope.two;
+			};
+			$scope.shoesub1 = function () {
+				$scope.leaves = !$scope.leaves;
+				$scope.holiday = !$scope.holiday;
+				$scope.expenseReimbursement = !$scope.expenseReimbursement;
+				$scope.three = !$scope.three;
+				$scope.four = !$scope.four;
+			};
+			///logout call
+			$scope.logout = function () {
+				if (confirm('Are you sure you want to logout?')) {
+					ionic.Platform.exitApp();
+				}
+
+				return false;
+			};
+		}
+	])
 	.controller('adminLgoinPageCtrl', ['$scope',
 		'$stateParams',
 		function ($scope,
@@ -554,7 +565,7 @@ console.log($rootScope.addedItemList);
 				setTimeout(function () {
 					var URL = ' https://whiznext-services.mybluemix.net/otp/v1/fetchBasedOnDeviceId?';
 					var deviceId = $cordovaDevice.getUUID();
-					
+
 					// alert(deviceId);
 					var finalURL = URL + "deviceId=" + deviceId;
 					$ionicLoading.show({
@@ -819,15 +830,15 @@ console.log($rootScope.addedItemList);
 			//saving passCode
 			$scope.passCodeSave = function () {
 				$ionicLoading.show({
-						content: 'Loading Data',
-						animation: 'fade-in',
-						showBackdrop: false,
-						maxWidth: 200,
-						showDelay: 500
-					});
+					content: 'Loading Data',
+					animation: 'fade-in',
+					showBackdrop: false,
+					maxWidth: 200,
+					showDelay: 500
+				});
 				var id = $scope.login.number.toString();
 
-//				 alert(id);
+				//				 alert(id);
 				var data = {
 					_id: id,
 					number: $scope.login.number,
@@ -838,7 +849,7 @@ console.log($rootScope.addedItemList);
 					passCode: $scope.login.rePassCode,
 					state: "notApproved"
 				}
-//				alert(JSON.stringify(data));
+				//				alert(JSON.stringify(data));
 				var URL = "https://whiznext-services.mybluemix.net/otp/v1/storeotp";
 				var config = {
 					headers: {
@@ -900,45 +911,45 @@ console.log($rootScope.addedItemList);
 
 			};
 			$scope.forgotPin = function () {
-					$scope.six = false;
-					$scope.seven = true;
-				}
-				///phone number validation at change pin option
+				$scope.six = false;
+				$scope.seven = true;
+			}
+			///phone number validation at change pin option
 			$scope.phoneNumberValidation = function () {
 				var enteredPhoneNumber = parseInt($scope.login.phoneNumber);
-					$ionicLoading.show({
-						content: 'Loading Data',
-						animation: 'fade-in',
-						showBackdrop: false,
-						maxWidth: 200,
-						showDelay: 500
-					});
-					for (var i = 0; i < $scope.otp.length; i++) {
-						if ($scope.otp[i].uuid === $cordovaDevice.getUUID() && enteredPhoneNumber === $scope.otp[i].number && $scope.otp[i].state === "approved") {
-							$ionicLoading.hide();
-							// alert("login matched");
-							$scope.seven = false;
-							$scope.eight = true;
-						} else {
-							// alert("login not matched");
-							$ionicLoading.hide();
-							$scope.phoneNumberError = "Enter correct number";
-						}
-					}
-
-				}
-				///end
-				// change pin validation
-			$scope.changePinValidation = function () {
-					if ($scope.login.newPassPin !== $scope.login.reEnternewPassPin) {
-						$scope.changePinError = "pin not matched";
+				$ionicLoading.show({
+					content: 'Loading Data',
+					animation: 'fade-in',
+					showBackdrop: false,
+					maxWidth: 200,
+					showDelay: 500
+				});
+				for (var i = 0; i < $scope.otp.length; i++) {
+					if ($scope.otp[i].uuid === $cordovaDevice.getUUID() && enteredPhoneNumber === $scope.otp[i].number && $scope.otp[i].state === "approved") {
+						$ionicLoading.hide();
+						// alert("login matched");
+						$scope.seven = false;
+						$scope.eight = true;
 					} else {
-						$scope.changePinError = "";
-						$scope.changePinButton = false;
+						// alert("login not matched");
+						$ionicLoading.hide();
+						$scope.phoneNumberError = "Enter correct number";
 					}
+				}
 
-				} //end
-				//change pin submit call
+			}
+			///end
+			// change pin validation
+			$scope.changePinValidation = function () {
+				if ($scope.login.newPassPin !== $scope.login.reEnternewPassPin) {
+					$scope.changePinError = "pin not matched";
+				} else {
+					$scope.changePinError = "";
+					$scope.changePinButton = false;
+				}
+
+			} //end
+			//change pin submit call
 			$scope.changePin = function () {
 				// alert($scope.otp[0]._rev);
 				// alert("passCode changed data");

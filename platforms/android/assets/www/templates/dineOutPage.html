@@ -21,6 +21,7 @@
         <span style="float:  right;margin-right: -30%;">Veg</span>
      </li>    
      <!-- <div ng-repeat="food in dineOutData" class = "item item-thumbnail-left" > -->
+         <div style="padding-bottom: 100px;">
         <div ng-repeat="food in filtered = (dineOutData  | filter:searchPage ) track by $index" class = "item item-thumbnail-left" ng-init="add[$index] = true;added[$index]=false;">
             <img ng-src="{{ food.img }}" />
 
@@ -33,7 +34,7 @@
              <span class="icon ion-checkmark-circled addedToCartIcon" style="float:right;" ng-show="added[$index]"></span>
             </p>
         </div>
-    
+    </div>
       
         <!-- filter model -->
         <script id = "filterModel.html" type = "text/ng-template">
@@ -75,7 +76,7 @@
     </ion-content>
     
     <div class = "bar bar-footer btncontinue" ng-click="goToDineItemPage();" >
-      <h1 class = "title">Cart Items ({{count}})</h1>
+      <h1 class = "title"><span style="float: left;">Items ({{count}})</span>  <span style="float:right;">View Cart</span></h1>
    </div>
     </ion-view>
     

@@ -25,8 +25,9 @@
 
   </ion-slide-box>
  <!-- dine_list -->
+
  <div class = "list" ng-show="dine_list">
-  <div ng-repeat="food in dineOutData" class = "item item-thumbnail-left" ng-click="goToDineOut();">
+  <div ng-repeat=" food in filtered = (dineOutData  | filter:searchPage ) track by $index" class = "item item-thumbnail-left" ng-click="goToDineOut();">
       <img ng-src="{{ food.img }}" />
      <p class="my_list_title">{{food.title}}</p>
      <h3 class="my_list_contet"> {{food.content}}</h3>
@@ -38,7 +39,7 @@
 </div>
 <!-- delivery_list -->
 <div class = "list" ng-show="delivery_list">
-    <div ng-repeat="food in deliveryData" class = "item item-thumbnail-left">
+    <div ng-repeat="food in filtered = (deliveryData  | filter:searchPage ) track by $index" class = "item item-thumbnail-left">
         <img ng-src="{{ food.img }}" />
        <p class="my_list_title">{{food.title}}</p>
        <h3 class="my_list_contet"> {{food.content}}</h3>
@@ -50,7 +51,7 @@
   </div>
 <!-- collections_list -->
 <div class = "list" ng-show="collections_list">
-    <div ng-repeat="food in collectionsData" class = "item item-thumbnail-left">
+    <div ng-repeat="food in filtered = (collectionsData  | filter:searchPage ) track by $index" class = "item item-thumbnail-left">
         <img ng-src="{{ food.img }}" />
        <p class="my_list_title">{{food.title}}</p>
        <h3 class="my_list_contet"> {{food.content}}</h3>
@@ -64,117 +65,32 @@
   
     <ion-modal-view >
       <header class="bar bar-header bar-positive">
-          <input class="w3-input text" type="text" style="border-bottom:rgb(219, 34, 75) 1px solid;" placeholder="Choose Area For Lunch" ng-model="search.location" >
+          <input class="w3-input text" type="text" style="border-bottom:rgb(219, 34, 75) 1px solid;" placeholder="Choose Area For Lunch" ng-model="searchPage" >
         <!-- <h1 class="title">Choose Area For Lunch</h1>
         <div class="icon ion-close-circled button button-icon button-clear" ng-click="closeModal()"></div> -->
       </header>
       <ion-content style="padding-top:45px!important;">
           <ul class = "list">
             <li class = "item item-checkbox">
-                  Checbox 1
+                 Hyderabad
                   <label class = "checkbox">
-                     <input type = "radio" name = "group1" ng-model="area.location"/>
+                     <input type = "radio" name = "group1" ng-model="searchPage"  value ="hyderabad" ng-click="onChangeRadioLocation(searchPage)"/>
                   </label>
                </li>
             
                <li class = "item item-checkbox">
-                  Checkbox 2
+                 Vizag
                   <label class = "checkbox">
-                     <input type = "radio" name = "group1" ng-model="area.location"/>
+                     <input type = "radio" name = "group1" ng-model="searchPage" value="vizag" ng-click="onChangeRadioLocation(searchPage)"/>
                   </label>
                </li>
             
                <li class = "item item-checkbox">
-                  Checkbox e
+                  Guntur
                   <label class = "checkbox">
-                     <input type = "radio" name = "group1" ng-model="area.location"/>
+                     <input type = "radio" name = "group1" ng-model="searchPage" value ="guntur" ng-click="onChangeRadioLocation(searchPage)"/>
                   </label>
-               </li>
-            
-               <li class = "item item-checkbox">
-                  Checkbox 4
-                  <label class = "checkbox">
-                     <input type = "radio" name = "group1" ng-model="area.location"/>
-                  </label>
-               </li> <li class = "item item-checkbox">
-                  Checbox 1
-                  <label class = "checkbox">
-                     <input type = "radio" name = "group1" ng-model="area.location"/>
-                  </label>
-               </li>
-            
-               <li class = "item item-checkbox">
-                  Checkbox 2
-                  <label class = "checkbox">
-                     <input type = "radio" name = "group1" ng-model="area.location"/>
-                  </label>
-               </li>
-            
-               <li class = "item item-checkbox">
-                  Checkbox e
-                  <label class = "checkbox">
-                     <input type = "radio" name = "group1" ng-model="area.location"/>
-                  </label>
-               </li>
-            
-               <li class = "item item-checkbox">
-                  Checkbox 4
-                  <label class = "checkbox">
-                     <input type = "radio" name = "group1" ng-model="area.location"/>
-                  </label>
-               </li> <li class = "item item-checkbox">
-                  Checbox 1
-                  <label class = "checkbox">
-                     <input type = "radio" name = "group1" ng-model="area.location"/>
-                  </label>
-               </li>
-            
-               <li class = "item item-checkbox">
-                  Checkbox 2
-                  <label class = "checkbox">
-                     <input type = "radio" name = "group1" ng-model="area.location"/>
-                  </label>
-               </li>
-            
-               <li class = "item item-checkbox">
-                  Checkbox e
-                  <label class = "checkbox">
-                     <input type = "radio" name = "group1" ng-model="area.location"/>
-                  </label>
-               </li>
-            
-               <li class = "item item-checkbox">
-                  Checkbox 4
-                  <label class = "checkbox">
-                     <input type = "radio" name = "group1" ng-model="area.location"/>
-                  </label>
-               </li> <li class = "item item-checkbox">
-                  Checbox 1
-                  <label class = "checkbox">
-                     <input type = "radio" name = "group1" ng-model="area.location"/>
-                  </label>
-               </li>
-            
-               <li class = "item item-checkbox">
-                  Checkbox 2
-                  <label class = "checkbox">
-                     <input type = "radio" name = "group1" ng-model="area.location"/>
-                  </label>
-               </li>
-            
-               <li class = "item item-checkbox">
-                  Checkbox e
-                  <label class = "checkbox">
-                     <input type = "radio" name = "group1" ng-model="area.location"/>
-                  </label>
-               </li>
-            
-               <li class = "item item-checkbox">
-                  Checkbox 4
-                  <label class = "checkbox">
-                     <input type = "radio" name = "group1" ng-model="area.location"/>
-                  </label>
-               </li>
+               </li>        
            </ul>
       </ion-content>
       <header class="bar bar-footer bar-positive footerBar">

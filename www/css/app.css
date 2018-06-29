@@ -181,9 +181,27 @@ a.animated-button.victoria-two:after {
 }
 .btncontinue h1{
 	line-height: 25px!important;
+	font-size: 14px!important;
 }
 .addedToCartIcon{
 	color: lightgreen!important;
 	font-size: 20px!important;
 	margin-top: -3px;
+}
+.cartHotel{
+	min-height: 65px!important;
+	margin-bottom: 10px;
+}
+.cartHotel img{
+	max-width: 50px!important;
+    max-height: 50px!important;
+}
+.cartItemTitle{
+	font-size: 13px;
+}
+.cartItemQuantity{
+	border: #ddd 1px solid;
+	width: 65px;
+	margin-right: 20px;
+	float: right;font-size: 15px;padding: 0px 3px;
 }

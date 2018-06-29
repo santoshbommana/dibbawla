@@ -1,42 +1,47 @@
 <ion-view title="Dine out" id="page6" style="background-color:white;" ng-model="vis">
     <ion-nav-buttons side="right" class="has-header">
-      <i class="button button-icon button-clear icon icon ion-funnel" ng-click="openModal();"></i>
+        <i class="button button-icon button-clear icon icon ion-funnel" ng-click="openModal();"></i>
     </ion-nav-buttons>
     <ion-content>
         <!-- dine_list -->
         <!-- <div ng-repeat="food in dineOutData" class = "item item-thumbnail-left" ng-click="goToDineItemPage();" ng-init="add[$index] = true"> -->
-         
 
 
-    <li class = "item item-toggle bar"  style="width: auto;height: 50px;">
-         <span>Non-Veg </span>
-        <label class = "toggle toggle-assertive" style="margin-right: 36%;">
-            <input type="checkbox" ng-model="searchPage"
-            ng-true-value="'veg'"  ng-false-value="'Non'"  ng-change="onChange(searchPage)">
-           <div class = "track">
-              <div class = "handle"></div>
-           </div>
-         
-        </label>
-        <span style="float:  right;margin-right: -30%;">Veg</span>
-     </li>    
-     <!-- <div ng-repeat="food in dineOutData" class = "item item-thumbnail-left" > -->
-        <div ng-repeat="food in filtered = (dineOutData  | filter:searchPage ) track by $index" class = "item item-thumbnail-left" ng-init="add[$index] = true;added[$index]=false;">
-            <img ng-src="{{ food.img }}" />
 
-           <p class="my_list_title">{{food.title}}</p>
-           <h3 class="my_list_contet"> {{food.content}}</h3>
-           <p class="list_footer centermy">
-             <span class="pull-left cost_title" style="float: left;">{{food.cost}}<span style="font-size: 9px;"> Rs</span></span>
-             <span class="pull-right offer_title">{{food.offer}}<span style="font-size: 8px;"> % Off</span></span>
-             <span class="pull-right offer_title" style="float:right;" ng-show="add[$index]" ng-click="add[$index] = false;added[$index]=true;addItem($index);">Add</span>
-             <span class="icon ion-checkmark-circled addedToCartIcon" style="float:right;" ng-show="added[$index]"></span>
-            </p>
+        <li class="item item-toggle bar" style="width: auto;height: 50px;">
+            <span>Non-Veg </span>
+            <label class="toggle toggle-assertive" style="margin-right: 36%;">
+                <input type="checkbox" ng-model="searchPage" ng-true-value="'veg'" ng-false-value="'Non'" ng-change="onChange(searchPage)">
+                <div class="track">
+                    <div class="handle"></div>
+                </div>
+
+            </label>
+            <span style="float:  right;margin-right: -30%;">Veg</span>
+        </li>
+        <!-- <div ng-repeat="food in dineOutData" class = "item item-thumbnail-left" > -->
+        <div style="padding-bottom: 100px;">
+            <div ng-repeat="food in filtered = (dineOutData  | filter:searchPage ) track by $index" class="item item-thumbnail-left"
+                ng-init="add[food.id] = true;added[food.id]=false;">
+                <img ng-src="{{ food.img }}" />
+
+                <p class="my_list_title">{{food.title}}</p>
+                <h3 class="my_list_contet"> {{food.content}}</h3>
+                <p class="list_footer centermy">
+                    <span class="pull-left cost_title" style="float: left;">{{food.cost}}{{add[food.id]}}
+                        <span style="font-size: 9px;"> Rs</span>
+                    </span>
+                    <span class="pull-right offer_title">{{food.offer}}
+                        <span style="font-size: 8px;"> % Off</span>
+                    </span>
+                    <span class="pull-right offer_title" style="float:right;" ng-show="add[food.id]" ng-click="add[food.id] = false;added[food.id]=true;addItem(food.id);">Add</span>
+                    <span class="icon ion-checkmark-circled addedToCartIcon" style="float:right;" ng-show="added[food.id]"></span>
+                </p>
+            </div>
         </div>
-    
-      
+
         <!-- filter model -->
-        <script id = "filterModel.html" type = "text/ng-template">
+        <script id="filterModel.html" type="text/ng-template">
             <ion-modal-view >
               <header class="bar bar-header bar-positive">
                   <input class="w3-input text" type="text" style="border-bottom:rgb(219, 34, 75) 1px solid;" placeholder="Choose Area For Lunch" ng-model="search.location" >
@@ -71,11 +76,13 @@
             </ion-modal-view>
         
          </script>
-         
+
     </ion-content>
-    
-    <div class = "bar bar-footer btncontinue" ng-click="goToDineItemPage();" >
-      <h1 class = "title">Cart Items ({{count}})</h1>
-   </div>
-    </ion-view>
-    
+
+    <div class="bar bar-footer btncontinue" ng-click="goToDineItemPage();">
+        <h1 class="title">
+            <span style="float: left;">Items ({{count}})</span>
+            <span style="float:right;">View Cart</span>
+        </h1>
+    </div>
+</ion-view>

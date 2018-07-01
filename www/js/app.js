@@ -6,14 +6,20 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 var mainapp = angular.module('app', ['ionic', 
-                                     'app.controllers', 
+                                     'app.SideMenucontrollers', 
                                      'app.routes', 
                                      'app.directives',
                                      'app.services',
                                      'uiGmapgoogle-maps',
                                      'googlemaps.init',
                                      'ngCordova',
-                                     'youtube-embed'
+                                     'youtube-embed',
+                                     'app.homeController',
+                                     'app.dineOutcontrollers',
+                                     'app.dineOutIteamController',
+                                     'app.aboutPagecontrollers',
+                                     'app.adminPageControllers',
+                                     'app.LoginController'
                                      ])
  
 

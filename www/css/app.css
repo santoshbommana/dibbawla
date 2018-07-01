@@ -99,21 +99,7 @@ a.animated-button.victoria-two:after {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
   font-weight: 300;
 }
-.socialIconfb{
-	font-size: 42px;padding: 8px 25px; border-radius: 100px;border: rgb(219, 34, 75) 1px solid;color: rgb(116,116,116);
-}
-.socialIconyt{
-	font-size: 42px;padding: 9px 13px; border-radius: 100px;border: rgb(219, 34, 75) 1px solid;color: rgb(116,116,116);
-}
-.socialIconwww{
-	font-size: 42px;padding: 9px 16px; border-radius: 100px;border: rgb(219, 34, 75) 1px solid;color: rgb(116,116,116);
-}
-.socialIconyupp{
-	border-radius: 100px;border: rgb(219, 34, 75) 1px solid;background: rgb(116,116,116);
-}
-.socialIconyupp:hover{
-	border-radius: 100px;border: rgb(116,116,116) 1px solid;background: rgb(219, 34, 75);
-}
+
 .imageUpload{
 	font-size: 36px;padding: 0px 6px; border-radius: 100px;border: rgb(219, 34, 75) 1px solid;color: rgb(116,116,116);
 	background: rgb(219, 34, 75);
@@ -124,6 +110,7 @@ a.animated-button.victoria-two:after {
 .socialIconfb:hover, .socialIconyt:hover, .socialIconwww:hover{
 	border: rgb(116,116,116) 1px solid;color: rgb(219, 34, 75);
 }
+/* this app css */
 .myicon{
 	background-color:rgb(219, 34, 75) !important;
 	color:white!important;
@@ -184,4 +171,37 @@ a.animated-button.victoria-two:after {
 .back-text{
 	color:rgb(219, 34, 75)!important; 
 }
-  
+.centermy {
+    text-align: center;
+}
+.btncontinue{
+	background-color: #EF473A!important;
+	margin-bottom: 35px;height: 38px!important;
+	
+}
+.btncontinue h1{
+	line-height: 25px!important;
+	font-size: 14px!important;
+}
+.addedToCartIcon{
+	color: lightgreen!important;
+	font-size: 20px!important;
+	margin-top: -3px;
+}
+.cartHotel{
+	min-height: 65px!important;
+	margin-bottom: 10px;
+}
+.cartHotel img{
+	max-width: 50px!important;
+    max-height: 50px!important;
+}
+.cartItemTitle{
+	font-size: 13px;
+}
+.cartItemQuantity{
+	border: #ddd 1px solid;
+	width: 65px;
+	margin-right: 20px;
+	float: right;font-size: 15px;padding: 0px 3px;
+}

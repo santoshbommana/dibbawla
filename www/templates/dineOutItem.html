@@ -2,7 +2,22 @@
         <ion-nav-buttons side="right" class="has-header">
         </ion-nav-buttons>
         <ion-content>
-            <!-- dine_list -->
+            <div class = "item item-thumbnail-left cartHotel" >
+                    <img ng-src="{{ itesToCart[0].img }}" />
+
+                    <p class="my_list_title">{{itesToCart[0].title}}</p>
+                    <h3 class="my_list_contet"> {{itesToCart[0].content}}</h3>
+            </div>
+           <div ng-repeat="food in itesToCart" class = "item" style="padding: 5px; border-color:transparent!important;"
+           ng-init="count[$index] = 1;amount=food.cost">
+           <p>
+               <span><i class="icon ion-minus-circled" style="color: lightgreen;"></i></span>
+               <span class="cartItemTitle">{{food.title}}</span>
+               <span class="pull-left cost_title" style="float: right;">{{amount}}<span style="font-size: 9px;"> Rs</span></span>
+               <span class="cartItemQuantity centermy"><span style="float: left;" ng-click="count[$index] = count[$index]-1;amount=amount-food.cost">-</span >{{count[$index]}}
+                <span style="float: right;" ng-click="count[$index] = count[$index]+1;amount=amount+food.cost">+</span></span>
+            </p>
+        </div>
      
         </ion-content>
     

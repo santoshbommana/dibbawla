@@ -40,39 +40,48 @@ angular.module('app.controllers', [])
 		$scope.dine_list = true;
 		$scope.delivery_list =false;
 		$scope.collections_list = false;
+		// home page DineOut 
 		$scope.dineOutData = [
 			{
 				img:'img/creolespicedcornthumb_640x480.jpg',
-				title:'Creole spiced cornt',
+				title:'Creole spiced cornt ',
 				content:'North Indian, Chinese, South Indian, Juices',
 				cost:'100',
-				offer:'5'
+				offer:'5',
+				type:'veg',
+				location:'hyderabad'
 
 			},
 			{
 				img:'img/y4nkk1dilwvytyzu2tte.jpg',
 				title:'Amul Tiffins Corner',
-				content:'Tilak Road, Abids & Koti',
+				content:'tiffins,snacks,South Indian ',
 				cost:'150',
-				offer:'8'
+				offer:'8',
+				type:'veg',
+				location:'vizag'
 
 			},
 			{
 				img:'img/creolespicedcornthumb_640x480.jpg',
 				title:'Creole spiced cornt',
-				content:'North Indian, Chinese, South Indian, Juices',
+				content:'North Indian, Chinese',
 				cost:'300',
-				offer:'15'
+				offer:'15',
+				type:'non',
+				location:'guntur'
 
 			}
 		];
+		// home page Dlivery Data
 		$scope.deliveryData = [
 			{
 				img:'img/y4nkk1dilwvytyzu2tte.jpg',
 				title:'Amul Tiffins Corne',
 				content:'North Indian, Chinese, South Indian, Juices',
 				cost:'200',
-				offer:'15'
+				offer:'15',
+				location:'vizag'
 
 			},
 			{
@@ -80,7 +89,8 @@ angular.module('app.controllers', [])
 				title:'Creole spiced cornt',
 				content:'Tilak Road, Abids & Koti',
 				cost:'150',
-				offer:'8'
+				offer:'8',
+				location:'guntur'
 
 			},
 			{
@@ -88,7 +98,8 @@ angular.module('app.controllers', [])
 				title:'Amul Tiffins Corner',
 				content:'North Indian, Chinese, South Indian, Juices',
 				cost:'350',
-				offer:'10'
+				offer:'10',
+				location:'guntur'
 
 			},
 			{
@@ -96,7 +107,8 @@ angular.module('app.controllers', [])
 				title:'Creole spiced cornt',
 				content:'Tilak Road, Abids & Koti',
 				cost:'150',
-				offer:'8'
+				offer:'8',
+				location:'hyderabad'
 
 			},
 			{
@@ -104,17 +116,20 @@ angular.module('app.controllers', [])
 				title:'Amul Tiffins Corner',
 				content:'North Indian, Chinese, South Indian, Juices',
 				cost:'350',
-				offer:'10'
+				offer:'10',
+				location:'guntur'
 
 			}
 		];
+		// home page Collections
 		$scope.collectionsData = [
 			{
 				img:'img/creolespicedcornthumb_640x480.jpg',
 				title:'Creole spiced cornt',
 				content:'Tilak Road, Abids & Koti',
 				cost:'150',
-				offer:'8'
+				offer:'8',
+				location:'guntur'
 
 			}
 		]
@@ -157,7 +172,8 @@ angular.module('app.controllers', [])
 		// 	$scope.openModal();
 		//  },500);
 		 $scope.closeModal = function() {
-			$scope.modal.hide();
+						$scope.modal.hide();
+			
 		 };
 		  
 
@@ -176,7 +192,12 @@ angular.module('app.controllers', [])
 			
 			$state.go("side-menu21.dineOutPage");
 		}
+		$scope.searchPage ='';
 
+		$scope.onChangeRadioLocation = function(loca){
+			$scope.searchPage  = loca;
+			console.log("sear hpage",$scope.searchPage);
+		}; 
 		// function getAllBased() {
 
 		// 	$ionicLoading.show({
@@ -216,50 +237,80 @@ angular.module('app.controllers', [])
 		// }
 
 	}
-]).controller('dineOutPageCtrl', ['$scope','$stateParams','$ionicModal','$state',
-function ($scope,$stateParams,$ionicModal,$state) {
+]).controller('dineOutPageCtrl', ['$scope','$stateParams','$ionicModal','$state','$rootScope',
+function ($scope,$stateParams,$ionicModal,$state,$rootScope) {
 	$scope.goToDineItemPage = function(){
 		$state.go("side-menu21.dineOutItemPage");
 	}
+
+	$scope.count=0;
+	$rootScope.addedItemList=[];
+	$scope.addItem = function(index){
+		$scope.count++;
+		var itm = $scope.dineOutData[index];
+		$rootScope.addedItemList.push(itm);
+		console.log($rootScope.addedItemList);
+	}
+
+	  $scope.searchPage = "";
+	     
+		$scope.onChange = function(val){
+			console.log("Selected Filter value",val);
+			
+		}
+		 
+		
+
+
 	$scope.dineOutData = [
 		{
 			img:'img/creolespicedcornthumb_640x480.jpg',
-			title:'Creole spiced cornt',
+			title:'Creole spiced cornt veg2',
 			content:'North Indian, Chinese, South Indian, Juices',
-			cost:'100',
-			offer:'5'
+			cost:100,
+			offer:5,
+			type:'veg',
+			location:'guntur'
+
+		},
+		{
+			img:'img/y4nkk1dilwvytyzu2tte.jpg',
+			title:'Amul Tiffins Corner veg',
+			content:'Tilak Road, Abids & Koti',
+			cost:150,
+			offer:8,
+			type:'veg',
+			location:'vizag'
+
+		},
+		{
+			img:'img/creolespicedcornthumb_640x480.jpg',
+			title:'Creole spiced cornt veg',
+			content:'North Indian, Chinese, South Indian, Juices',
+			cost:300,
+			offer:15,
+			type:'veg',
+			location:'guntur'
 
 		},
 		{
 			img:'img/y4nkk1dilwvytyzu2tte.jpg',
 			title:'Amul Tiffins Corner',
 			content:'Tilak Road, Abids & Koti',
-			cost:'150',
-			offer:'8'
+			cost:150,
+			offer:8,
+			type:'Non',
+			location:'vizag'
 
 		},
 		{
 			img:'img/creolespicedcornthumb_640x480.jpg',
 			title:'Creole spiced cornt',
 			content:'North Indian, Chinese, South Indian, Juices',
-			cost:'300',
-			offer:'15'
-
-		},
-		{
-			img:'img/y4nkk1dilwvytyzu2tte.jpg',
-			title:'Amul Tiffins Corner',
-			content:'Tilak Road, Abids & Koti',
-			cost:'150',
-			offer:'8'
-
-		},
-		{
-			img:'img/creolespicedcornthumb_640x480.jpg',
-			title:'Creole spiced cornt',
-			content:'North Indian, Chinese, South Indian, Juices',
-			cost:'300',
-			offer:'15'
+			cost:300,
+			offer:15,
+			type:'Non',
+			location:'hyderabad'
 
 		}
 	];
@@ -284,11 +335,11 @@ function ($scope,$stateParams,$ionicModal,$state) {
 }
 ])
 .controller('dineOutItemCtrl', ['$scope',
-	'$stateParams',
+	'$stateParams','$rootScope',
 	function ($scope,
-		$stateParams) {
-
-
+		$stateParams,$rootScope) {
+$scope.itesToCart=$rootScope.addedItemList;
+console.log($rootScope.addedItemList);
 
 	}
 ])

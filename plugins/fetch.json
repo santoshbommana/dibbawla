@@ -99,11 +99,11 @@
     "variables": {}
   },
   "cordova-plugin-request-location-accuracy": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-request-location-accuracy@^2.2.3"
-    },
-    "is_top_level": true,
-    "variables": {}
-  }
+        "source": {
+          "type": "registry",
+         "id": "cordova-plugin-request-location-accuracy@^2.2.3"
+        },
+        "is_top_level": true,
+       "variables": {}
+      }
 }

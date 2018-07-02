@@ -18,7 +18,7 @@ angular.module('app.routes', ['ngSanitize','ionic'])
     views: {
       'side-menu21': {
         templateUrl: 'templates/Home.html',
-        controller: 'homeCtrl'
+        controller: 'homeContoller'
       }
     }
   })
